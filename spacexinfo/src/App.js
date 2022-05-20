@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       SpaceX info
       <ApiConnector />
-      <Launches />
+  
     </div>
   );
 }
