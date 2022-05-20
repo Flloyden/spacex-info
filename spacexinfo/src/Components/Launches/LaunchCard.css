@@ -1,0 +1,45 @@
+.card {
+    background-color: rgb(105, 105, 105);
+    max-width: 700px;
+    margin: auto;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.left-side {
+    width: 100px;
+    float: left;
+}
+
+.left-side img{
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.right-side {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.space-item-info {
+    flex: 1 0 30%;
+    text-align: left;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 170px;
+}
+
+.space-item-info h5{
+    font-size: 16px;
+    color: rgb(160, 160, 160);
+    margin: 0px;
+}
+
+.space-item-info h4{
+    font-size: 20px;
+    color: #fff;
+}
