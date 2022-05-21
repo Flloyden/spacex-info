@@ -6,6 +6,16 @@ export default function LaunchCard(props) {
     // declaring state variable
     const [list, setList] = useState([])
 
+
+
+    /**
+     * 
+     * Dessa funktioner är typ identiska, en if/else är nog bättre
+     * 
+     * I button kan vi bara kalla onClick={sortListUpcoming(uppcomming/completed)} och använda parameter för att bestämma vilken vi vill ha
+     */
+
+    
     function sortListUpcoming(event) {
         /* 
         Sorting the list by upcoming launches
