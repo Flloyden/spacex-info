@@ -1,14 +1,25 @@
 import './App.css';
-import ApiConnector from './ApiConnector/ApiConnector';
 import Launches from './Components/Launches/Launches';
+import Rockets from './Components/Rockets/Rockets';
 
 function App() {
   return (
-    <div className="App">
-      SpaceX info
-      <ApiConnector />
+    <main className="container row">
+
+      <h1 className='text-center'>SpaceX info</h1>
+      
+      <div className='col-lg-6'>
+        <h2>Launches</h2>
+        <Launches />
+      </div>
+
+      <div className='col-lg-6'>
+        <h2>Rockets</h2>
+        <Rockets />
+      </div>
+      
   
-    </div>
+    </main>
   );
 }
 
