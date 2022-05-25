@@ -12,10 +12,10 @@ export default function MyLaunches() {
     let showLaunchCard = (JSON.parse(newObject));
 
     return (
-      <div class="m-4 bg-light"><h2 class="m-2">My Launches</h2>{showLaunchCard.map((info) => {
+      <div class="m-4 bg-light"><h2 className="m-2">My Launches</h2>{showLaunchCard.map((info) => {
 
         return (
-          <div className="card" key={info.id}>
+          <div className="card" key={"Launches"+info.id}>
             <div className="card-body">
               <div className='left-side'>
                 <img src={info.links.patch.small} alt='spacex mission' />
