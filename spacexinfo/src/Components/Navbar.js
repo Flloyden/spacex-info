@@ -11,7 +11,7 @@ export default function Navbar(props) {
 
             <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div className="offcanvas-header">
-                <h5 className="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                <h5 className="offcanvas-title" id="offcanvasExampleLabel"> </h5>
                 <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div className="offcanvas-body">
@@ -21,9 +21,8 @@ export default function Navbar(props) {
                 </div>
                 {props.items.map((list, index) => {
                   return(
-                    <li className="list-group-item" key={index}>
+                    <li className="items" key={index} onClick={() => {props.changeFrame(list.frame)}}>
                       { list.title }
-                      <button className="btn btn-sm btn-danger float-end" onClick={() => {props.changeFrame(list.frame)}}>X</button>
                     </li>
                   )
                 })}
