@@ -4,7 +4,7 @@ import Rockets from './Components/Rockets/Rockets';
 
 function App() {
   return (
-    <main className="container row">
+    <main className="container row m-auto">
 
       <h1 className='text-center'>SpaceX info</h1>
       

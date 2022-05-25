@@ -3,6 +3,7 @@ import axios from 'axios'
 import LaunchCard from '../Components/Launches/LaunchCard';
 import RocketCard from '../Components/Rockets/RocketCard';
 
+
 export default function ApiConnector2(props) {
 
     // declaring state variable
@@ -28,6 +29,11 @@ export default function ApiConnector2(props) {
         return (<LaunchCard launchInfo={SpaceXResponse} />)
     
     } else if (props.endpoint === "rockets") {
+        
+        for (let i = 0; i<SpaceXResponse.length; i++) {
+            localStorage.setItem(SpaceXResponse[i].id, SpaceXResponse[i]);
+        }
+            
         
         return (<RocketCard rocketInfo={SpaceXResponse} />)
     }
