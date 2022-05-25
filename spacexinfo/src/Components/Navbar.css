@@ -2,7 +2,7 @@ li {
     list-style: none;
 }
 
-.navbar-toggler {
+.rounded {
     position: absolute !important;
     margin-top: 20px !important;
     margin-left: 20px !important;

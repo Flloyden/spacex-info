@@ -39,15 +39,11 @@ function changeFrame(id) {
 }
 
   return (
-    <div>
-      <ul className="list-group">
-        <Navbar items={mainFrame} changeFrame={changeFrame} />
-      </ul>
-
-      <main className="container row m-auto">
-
-        <h1 className='text-center'>SpaceX info</h1>
-        
+    <div className='content'>
+      <div className='col-lg-2'>
+          <Navbar items={mainFrame} changeFrame={changeFrame} />
+      </div>
+      <main className="container row m-auto">        
         <div className='col-lg-12'>
           {frame}
         </div>
