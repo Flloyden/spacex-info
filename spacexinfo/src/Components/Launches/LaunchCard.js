@@ -1,12 +1,29 @@
 import React, { useState } from 'react'
 import './LaunchCard.css'
+import LaunchModal from '../LaunchModal/LaunchModal'
 
 export default function LaunchCard(props) {
 
     // declaring state variable
     const [list, setList] = useState([])
+    let something; 
 
+    const [thisRocket, setthisRocket] = useState({
+        name: '',
+        rocket: "5e9d0d95eda69973a809d1ec",
+        flight_number: ""
+    })
 
+    function sendData(e) {
+
+        let thisUniqueRocket = props.launchInfo[e.target.id]
+        
+        setthisRocket({
+            name: thisUniqueRocket.name,
+            rocket: thisUniqueRocket.rocket,
+            flight_number: thisUniqueRocket.flight_number
+        })
+    }
 
     /**
      * 
@@ -58,7 +75,7 @@ export default function LaunchCard(props) {
         */}
         {JSON.stringify(list) !== '[]' ?
         <>
-         {list.map((info) => {
+         {list.map((info, index) => {
                         return (
                             <div className="card" key={info.id}>
                                 <div className="card-body">
@@ -96,7 +113,9 @@ export default function LaunchCard(props) {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" className="btn btn-primary">Read more</a>
+                                <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Launch demo modal
+                                </button>
                             </div>
                         )
                     })}
@@ -105,7 +124,7 @@ export default function LaunchCard(props) {
         // else, showing the sorted list based on the sort function
         : 
         <>
-         {props.launchInfo.map((info) => {
+         {props.launchInfo.map((info, index) => {
                         return (
                             <div className="card" key={info.id}>
                                 <div className="card-body">
@@ -143,12 +162,18 @@ export default function LaunchCard(props) {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" className="btn btn-primary">Read more</a>
+                                <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Launch demo modal
+                                </button>
                             </div>
                         )
                     })}
         </>
     }
+
+          <div className="modal fade" id="exampleModal" tabIndex="-1">
+              <LaunchModal launch={thisRocket}/>
+          </div>
     </div>
   )
 }
