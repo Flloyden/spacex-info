@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import './LaunchCard.css'
+import React, { useState } from 'react';
+import './LaunchCard.css';
+
 
 export default function LaunchCard(props) {
 
@@ -48,17 +49,41 @@ export default function LaunchCard(props) {
         setList(array)
     }
 
+    function addToLocalStorage(e) {
+        if (localStorage.getItem("addedLaunchCard") === null) {
+            let myLaunchList = []
+            myLaunchList.push(props.launchInfo[e.target.id])
+            localStorage.setItem("addedLaunchCard", JSON.stringify(myLaunchList));
+        
+          }
+          else{
+            let saveMyLaunch = JSON.parse(localStorage.getItem("addedLaunchCard"));
+            saveMyLaunch.push(props.launchInfo[e.target.id])
+            localStorage.setItem("addedLaunchCard", JSON.stringify(saveMyLaunch));
+          } 
+    }
+
+
+    
+
+    /*
+    function deleteMyLaunchCard(id) {
+        setTodos(todos.filter((item) => item.id !== id));
+    }
+    */
+
   return (
     <div>
         <button type="button" className="btn btn-secondary" onClick={sortListUpcoming}>Upcomning</button>
         <button type="button" className="btn btn-success" onClick={sortListCompleted}>Completed</button>
+       
 
         {/* 
             start-page is set to upcoming launches by default
         */}
         {JSON.stringify(list) !== '[]' ?
         <>
-         {list.map((info) => {
+         {list.map((info, index) => {
                         return (
                             <div className="card" key={info.id}>
                                 <div className="card-body">
@@ -93,11 +118,14 @@ export default function LaunchCard(props) {
                                         <div className='space-item-info'>
                                             <h5 className="card-title">Rocket</h5>
                                             <h4 className="card-text">{info.rocket}</h4>
+                                            
                                         </div>
                                     </div>
+                                    
                                 </div>
                                 <a href="#" className="btn btn-primary">Read more</a>
-                            </div>
+                                <a href="#" className="btn btn-info" id ={index} onClick={addToLocalStorage}>Add to "My Launches"</a>
+                                </div>
                         )
                     })}
         </>
@@ -105,7 +133,7 @@ export default function LaunchCard(props) {
         // else, showing the sorted list based on the sort function
         : 
         <>
-         {props.launchInfo.map((info) => {
+         {props.launchInfo.map((info, index) => {
                         return (
                             <div className="card" key={info.id}>
                                 <div className="card-body">
@@ -144,6 +172,7 @@ export default function LaunchCard(props) {
                                     </div>
                                 </div>
                                 <a href="#" className="btn btn-primary">Read more</a>
+                                <a href="#" className="btn btn-info" id ={index} onClick={addToLocalStorage}>Add to "My Launches"</a>
                             </div>
                         )
                     })}
