@@ -17,7 +17,7 @@ export default class Rockets extends Component {
 
         return (
             <div>
-                <ApiConnector2 endpoint={'rockets'} />
+                <ApiConnector2 endpoint={'v4/rockets'} />
             </div>
         )
     }

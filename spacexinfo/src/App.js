@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Launches from './Components/Launches/Launches';
-import Mainframe from './Components/Mainframe';
+import Mainframe from './Components/Mainframe/Mainframe';
 import Navbar from './Components/Navbar';
 import Rockets from './Components/Rockets/Rockets';
 
