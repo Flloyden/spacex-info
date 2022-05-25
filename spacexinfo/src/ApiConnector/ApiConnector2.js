@@ -19,7 +19,6 @@ export default function ApiConnector2(props) {
                 arrayReverse.reverse()
                 // saving the array
                 setLaunchInfo(arrayReverse);
-                console.log(props.endpoint)
             })
 
         // empty dependency array means this effect will only run once (like componentDidMount in classes)
@@ -31,7 +30,7 @@ export default function ApiConnector2(props) {
     } else if (props.endpoint === "rockets") {
         
         for (let i = 0; i<SpaceXResponse.length; i++) {
-            localStorage.setItem(SpaceXResponse[i].id, SpaceXResponse[i]);
+            localStorage.setItem(SpaceXResponse[i].id, JSON.stringify(SpaceXResponse[i]));
         }
             
         

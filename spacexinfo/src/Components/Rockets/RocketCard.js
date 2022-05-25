@@ -57,7 +57,7 @@ export default class RocketCard extends Component {
 
         return (
             <div >
-                <select onChange={this.chooseRocket}>
+                <select className="form-select" onChange={this.chooseRocket}>
                     <option>Select Rocket</option>
                     {this.props.rocketInfo.map(rocket =>
 
