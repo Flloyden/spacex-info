@@ -19,7 +19,7 @@ export default class Launches extends Component {
 
     return (
       <div>
-        <ApiConnector2 endpoint={'launches'} />
+        <ApiConnector2 endpoint={'v4/launches'} />
       </div>
     )
   }

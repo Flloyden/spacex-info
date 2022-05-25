@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Launches from './Components/Launches/Launches';
-import Mainframe from './Components/Mainframe';
+import Mainframe from './Components/Mainframe/Mainframe';
 import Navbar from './Components/Navbar';
 import Rockets from './Components/Rockets/Rockets';
 import MyLaunches from './Components/MyLaunches/MyLaunches';
@@ -40,15 +40,11 @@ function changeFrame(id) {
 }
 
   return (
-    <div>
-      <ul className="list-group">
-        <Navbar items={mainFrame} changeFrame={changeFrame} />
-      </ul>
-
-      <main className="container row m-auto">
-
-        <h1 className='text-center'>SpaceX info</h1>
-        
+    <div className='content'>
+      <div className='col-lg-2'>
+          <Navbar items={mainFrame} changeFrame={changeFrame} />
+      </div>
+      <main className="container row m-auto">        
         <div className='col-lg-12'>
           {frame}
         </div>
