@@ -1,0 +1,15 @@
+li {
+    list-style: none;
+}
+
+.navbar-toggler {
+    position: absolute !important;
+    margin-top: 20px !important;
+    margin-left: 20px !important;
+    float: left;
+
+}
+
+span {
+    font-size: 40px;
+}

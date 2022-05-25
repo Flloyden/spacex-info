@@ -13,6 +13,18 @@
   }
 }
 
+.col-lg-6 {
+  margin-top: 70px;
+}
+
+.text-center {
+  margin-top: 34px;
+}
+
+.button {
+  margin: auto;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
