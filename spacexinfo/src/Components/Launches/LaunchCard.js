@@ -65,10 +65,34 @@ export default function LaunchCard(props) {
         setList(array)
     }
 
+    function addToLocalStorage(e) {
+        if (localStorage.getItem("addedLaunchCard") === null) {
+            let myLaunchList = []
+            myLaunchList.push(props.launchInfo[e.target.id])
+            localStorage.setItem("addedLaunchCard", JSON.stringify(myLaunchList));
+        
+          }
+          else{
+            let saveMyLaunch = JSON.parse(localStorage.getItem("addedLaunchCard"));
+            saveMyLaunch.push(props.launchInfo[e.target.id])
+            localStorage.setItem("addedLaunchCard", JSON.stringify(saveMyLaunch));
+          } 
+    }
+
+
+    
+
+    /*
+    function deleteMyLaunchCard(id) {
+        setTodos(todos.filter((item) => item.id !== id));
+    }
+    */
+
   return (
     <div>
         <button type="button" className="btn btn-secondary" onClick={sortListUpcoming}>Upcomning</button>
         <button type="button" className="btn btn-success" onClick={sortListCompleted}>Completed</button>
+       
 
         {/* 
             start-page is set to upcoming launches by default
@@ -110,9 +134,14 @@ export default function LaunchCard(props) {
                                         <div className='space-item-info'>
                                             <h5 className="card-title">Rocket</h5>
                                             <h4 className="card-text">{info.rocket}</h4>
+                                            
                                         </div>
                                     </div>
+                                    
                                 </div>
+                                <a href="#" className="btn btn-info" id ={index} onClick={addToLocalStorage}>Add to "My Launches"</a>
+                                </div>
+
                                 <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Launch demo modal
                                 </button>
@@ -162,9 +191,13 @@ export default function LaunchCard(props) {
                                         </div>
                                     </div>
                                 </div>
+
+                                
+                                <a href="#" className="btn btn-info" id ={index} onClick={addToLocalStorage}>Add to "My Launches"</a>
                                 <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Launch demo modal
                                 </button>
+
                             </div>
                         )
                     })}

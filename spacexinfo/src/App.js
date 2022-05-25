@@ -4,6 +4,7 @@ import Launches from './Components/Launches/Launches';
 import Mainframe from './Components/Mainframe/Mainframe';
 import Navbar from './Components/Navbar';
 import Rockets from './Components/Rockets/Rockets';
+import MyLaunches from './Components/MyLaunches/MyLaunches';
 
 function App() {
   const [mainFrame, setMainFrame] = useState([
@@ -26,9 +27,9 @@ function App() {
     },
     {
       id: 4,
-      title: "My launches"
+      title: "MyLaunches"
       ,
-      frame: <Mainframe />
+      frame: <MyLaunches />
     }
 ]);
 
