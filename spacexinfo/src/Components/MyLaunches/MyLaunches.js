@@ -1,22 +1,21 @@
 import React from 'react'
 
 
-
 export default function MyLaunches() {
 
   if (localStorage.getItem("addedLaunchCard") === null) {
     return (
-      <div class="m-4 bg-light"><h2 className="m-2">The list of "My Launches" is empty...</h2></div>
+      <div class="m-4 mt-9 text-muted"><h2 className="m-2">The list of "My Launches" is empty...</h2></div>
     )
   } else {
     let newObject = window.localStorage.getItem("addedLaunchCard");
     let showLaunchCard = (JSON.parse(newObject));
 
     return (
-      <div class="m-4 bg-light"><h2 className="m-2">My Launches</h2>{showLaunchCard.map((info) => {
+      <div class="m-4 mt-4 text-muted"><h2 className="mt-2">My Launches</h2>{showLaunchCard.map((info) => {
 
         return (
-          <div className="card" key={"Launches"+info.id}>
+          <div className="card rounded-0 bg-secondary col-9 mx-auto mt-3" key={"Launches"+info.id}>
             <div className="card-body">
               <div className='left-side'>
                 <img src={info.links.patch.small} alt='spacex mission' />
@@ -56,8 +55,11 @@ export default function MyLaunches() {
               </div>
 
             </div>
-            <a href="#" className="btn btn-primary">Launch demo modal</a>
-            <a href="#" className="btn btn-danger" id onlick >Delete</a>
+            <div class="d-grid gap-2 col-3 mx-auto mb-3">
+              <button type="button" className="btn btn-primary rounded-0">Launch demo modal</button>
+              <button type="button" className="btn btn-danger rounded-0" id onlick >Delete</button>
+            
+          </div>
 
           </div>
 

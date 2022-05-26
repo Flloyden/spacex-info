@@ -1,16 +1,13 @@
 .launchCard {
-    background-color: rgb(105, 105, 105);
+    background-color: #6c757d;
     max-width: 700px;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
+    border-radius: 0;
 
 }
 
-.launchCard-body {
-    padding: 20px;
-    min-width: fit-content;
-}
 
 .left-side {
     width: 100px;
@@ -30,7 +27,7 @@
 
 .space-item-info {
     flex: 1 0 30%;
-    text-align: left;
+    text-align: center;
     padding-left: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
