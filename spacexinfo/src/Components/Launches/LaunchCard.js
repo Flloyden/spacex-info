@@ -151,12 +151,14 @@ export default function LaunchCard(props) {
                                             
                                             Launch demo modal
                                             </button>
-                                            </div
-                                    
 
                             </div>
                         </div>        
                     </div>
+
+                    </div>
+
+
 
                         )
                     })}
