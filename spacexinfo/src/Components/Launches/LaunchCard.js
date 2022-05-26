@@ -89,14 +89,14 @@ export default function LaunchCard(props) {
     }
 
     */
-    
+
 
     return (
         <div>
             <div class="row">
                 <div class="col text-center">
                     <button type="button" className="mt-5 pr-3 btn btn-secondary" onClick={sortListUpcoming}>Upcomning</button>
-                     <button type="button" className="mt-5 pl-3 btn btn-success" onClick={sortListCompleted}>Completed</button>
+                    <button type="button" className="mt-5 pl-3 btn btn-success" onClick={sortListCompleted}>Completed</button>
                 </div>
             </div>
 
@@ -146,11 +146,12 @@ export default function LaunchCard(props) {
                                         </div>
 
                                     </div>
-                                    <button type="button"className="btn btn-info btn-block" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
-                                    
-                                <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Read more
-                                </button>
+                                    <button type="button" className="btn btn-info btn-block" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
+
+                                    <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Read more
+                                    </button>
+                                </div>
                             </div>
                         )
                     })}
@@ -196,15 +197,16 @@ export default function LaunchCard(props) {
                                             <h4 className="card-text">{info.rocket}</h4>
                                         </div>
 
-                                        <button type className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
+                                        <button className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
 
-                                <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Read more
-                                </button>
+                                        <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Read more
+                                        </button>
+
+                                    </div>
+
 
                                 </div>
-
-
                             </div>
                         )
                     })}
@@ -214,6 +216,7 @@ export default function LaunchCard(props) {
             <div className="modal fade" id="exampleModal" tabIndex="-1">
                 <LaunchModal launch={thisRocket} />
             </div>
+            
         </div>
     )
 }
