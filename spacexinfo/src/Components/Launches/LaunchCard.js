@@ -108,11 +108,17 @@ export default function LaunchCard(props) {
             {JSON.stringify(list) !== '[]' ?
                 <>
                     {list.map((info, index) => {
+                        let launchPatch;
+                        if (info.links.patch.small === null) {
+                            launchPatch = "https://imgur.com/IJWn9pK.png"
+                        } else {
+                            launchPatch = info.links.patch.small
+                        }
                         return (
                                 <div className="card launchCard" key={info.id}>
                                     <div className="card-body launchCard-body">
                                         <div className='left-side'>
-                                            <img src={info.links.patch.small} alt='spacex mission' />
+                                            <img src={launchPatch} alt='spacex mission' />
                                         </div>
                                         <div className='right-side'>
                                             <div className='space-item-info'>
@@ -148,15 +154,11 @@ export default function LaunchCard(props) {
                                             <div class="d-grid gap-2 col-6 mx-auto">
                                                 <button type="button"className="btn bg-light bg-gradient  rounded-0 p-9" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
                                                 <button type="button" className="btn btn-primary rounded-0 p-9" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                    Launch demo modal
+                                                    Read more
                                                 </button>
                                             </div>
                                          
                                         </div>
-                                        <button type="button"className="btn btn-info btn-block" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
-                                        <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                         Read more
-                                        </button>
                                      </div>
 
 
@@ -176,11 +178,17 @@ export default function LaunchCard(props) {
                 :
                 <>
                     {props.launchInfo.map((info, index) => {
+                        let launchPatch;
+                        if (info.links.patch.small === null) {
+                            launchPatch = "https://imgur.com/IJWn9pK.png"
+                        } else {
+                            launchPatch = info.links.patch.small
+                        }
                         return ( 
                             <div className="card launchCard" key={info.id}>
                                 <div className="card-body launchCard-body">
                                     <div className='left-side'>
-                                        <img src={info.links.patch.small} alt='spacex mission' />
+                                        <img src={launchPatch} alt='spacex mission' />
                                     </div>
                                     <div className='right-side'>
                                         <div className='space-item-info'>
@@ -215,8 +223,6 @@ export default function LaunchCard(props) {
 
 
                                         <button type className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
-
-
                                         <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             Read more
                                         </button>
