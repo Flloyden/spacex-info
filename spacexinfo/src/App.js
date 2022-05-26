@@ -41,14 +41,19 @@ function changeFrame(id) {
 
   return (
     <div className='content'>
-      <div className='col-lg-2'>
-          <Navbar items={mainFrame} changeFrame={changeFrame} />
-      </div>
-      <main className="container row m-auto">        
-        <div className='col-lg-12'>
-          {frame}
+      <div className='row container-fluid pt-4'>
+        <div className='col-2'>
+              <Navbar items={mainFrame} changeFrame={changeFrame} />
+          </div>
+          <div className='col-8 text-center pt-2'>
+            <img className='img-fluid img-max' src='./SpaceX-logo.png' alt='SpaceX logo' />
+          </div>
+          <div className='col-2'>
+          </div>
         </div>
-      </main>
+        <main className="container frame-content row m-auto">       
+          {frame}
+        </main>
     </div>
   );
 }

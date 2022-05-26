@@ -6,7 +6,6 @@
     padding-left: 50px;
 }
 
-
 .offcanvas-body>li {
     list-style: none;
     transition: 0.2s ease-in-out;
@@ -22,15 +21,18 @@
     color: #000;
 }
 
+.menu-button-color {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.menu-rocket {
+    width: 50px;
+}
+  
 .menuButton {
     position: absolute !important;
     margin-top: 20px !important;
     margin-left: 20px !important;
     float: left;
     border: none;
-
-}
-
-.buttonSize {
-    font-size: 40px;
 }
