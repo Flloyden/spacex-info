@@ -144,7 +144,7 @@ export default function LaunchCard(props) {
                                 </div>
 
                                 <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Launch demo modal
+                                    Read more
                                 </button>
                             </div>
                         )
@@ -196,7 +196,7 @@ export default function LaunchCard(props) {
 
                                 <a href="#" className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</a>
                                 <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Launch demo modal
+                                    Read more
                                 </button>
 
                             </div>

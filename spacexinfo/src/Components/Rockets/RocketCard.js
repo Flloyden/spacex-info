@@ -18,7 +18,11 @@ export default class RocketCard extends Component {
             company: "N/A",
             wikipedia: "N/A",
             description: "",
-            flickr_images: "./SpaceX-logo.png"
+            flickr_images: "./SpaceX-logo.png",
+            height: "0",
+            width: "0",
+            mass: "0",
+            engineThrust: "0"
         }
 
 
@@ -46,7 +50,11 @@ export default class RocketCard extends Component {
             company: thisRocket.company,
             wikipedia: thisRocket.wikipedia,
             description: thisRocket.description,
-            flickr_images: thisRocket.flickr_images[0]
+            flickr_images: thisRocket.flickr_images[0],
+            height: thisRocket.height.meters,
+            width: thisRocket.diameter.meters,
+            mass: thisRocket.mass.kg,
+            engineThrust: thisRocket.engines.thrust_sea_level.kN
         });
 
 
@@ -57,48 +65,91 @@ export default class RocketCard extends Component {
 
         return (
             <div >
-                <select className="form-select" onChange={this.chooseRocket}>
-                    <option>Select Rocket</option>
-                    {this.props.rocketInfo.map(rocket =>
+                <div className="col-6 m-auto">
+                    <select className="form-select col-6 m-auto" onChange={this.chooseRocket}>
+                        <option>Select Rocket</option>
+                        {this.props.rocketInfo.map(rocket =>
 
-                        <option key={rocket.id} value={rocket.name}>
-                            {rocket.name}
-                        </option>
-
-
-                    )}
-                </select>
+                            <option key={rocket.id} value={rocket.name}>
+                                {rocket.name}
+                            </option>
 
 
-                <div className="card mb-3">
-                    <img src={this.state.flickr_images} className="card-img-top" alt="..."></img>
-                    <div className="card-body rocket-card">
-                            <h5 className="card-title text-light">{this.state.name}</h5>
-                            <p className="card-text">{this.state.description}</p>
-                            <div className="col">
-                                <h6 className="text-light">Specs</h6>
-                                <ul className="bg-light rounded">
-                                    <li>
-                                        ID: {this.state.id}
-                                    </li>
-                                    <li>
-                                        Type: {this.state.type}
-                                    </li>
-                                    <li>
-                                        Active: {this.state.active}
-                                    </li>
-                                    <li>
-                                        Boosters: {this.state.boosters}
-                                    </li>
-                                    <li>
-                                        Company: {this.state.company}
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        )}
+                    </select>
                 </div>
 
-               
+
+
+                <div className="card col-lg-8 mb-3 rocket-card m-auto">
+                    <img src={this.state.flickr_images} className="card-img-top" alt="..."></img>
+                    <div className="card-body">
+                        <h3 className="card-title text-light">{this.state.name}</h3>
+                        <p className="card-text text-light">{this.state.description}</p>
+                        <div className="col">
+                            <h6 className="text-light">Specs</h6>
+
+                            <table className="table bg-light rounded">
+                                <thead>
+                                    <tr>
+
+                                        <th colspan="3">Rocket Name: {this.state.name}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+                                        <td>Height<h4>{this.state.height}m</h4></td>
+                                        <td><img src="./startup.png" className="img-fluid rocketSize" alt="..."></img></td>
+                                        <td></td>
+                                        <td><img src="./weight.png" className="img-fluid iconSize" alt="..."></img></td>
+                                        <td><h3>{this.state.mass} kg</h3></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Diameter<h4>{this.state.width}m</h4></td>
+                                        <td></td>
+                                        <td><img src="./engine.png" className="img-fluid iconSize" alt="..."></img></td>
+                                        <td><h3>{this.state.engineThrust} kN</h3></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table table-dark table-striped rounded">
+
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">ID:</th>
+                                        <td>{this.state.id}</td>
+                                        <th scope="row">Type:</th>
+                                        <td>{this.state.type}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Boosters:</th>
+                                        <td>{this.state.boosters}</td>
+                                        <th scope="row">Company</th>
+                                        <td>{this.state.company}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Cost per launch:</th>
+                                        <td>{this.state.cost_per_launch}</td>
+                                        <th scope="row">Success rate</th>
+                                        <td>{this.state.success_rate_pct}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Read more:</th>
+                                        <td><a href={this.state.wikipedia}>Wikipedia</a></td>
+                                        <th scope="row">Success rate</th>
+                                        <td>{this.state.success_rate_pct}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+
 
             </div>
 
