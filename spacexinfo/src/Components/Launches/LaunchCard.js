@@ -102,8 +102,8 @@ export default function LaunchCard(props) {
                     {list.map((info, index) => {
                         return (
                             <div>
-                                <div className="card" key={info.id}>
-                                    <div className="card-body">
+                                <div className="card launchCard" key={info.id}>
+                                    <div className="card-body launchCard-body">
                                         <div className='left-side'>
                                             <img src={info.links.patch.small} alt='spacex mission' />
                                         </div>
@@ -156,8 +156,8 @@ export default function LaunchCard(props) {
                 <>
                     {props.launchInfo.map((info, index) => {
                         return (
-                            <div className="card" key={info.id}>
-                                <div className="card-body">
+                            <div className="card launchCard" key={info.id}>
+                                <div className="card-body launchCard-body">
                                     <div className='left-side'>
                                         <img src={info.links.patch.small} alt='spacex mission' />
                                     </div>
