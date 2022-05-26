@@ -1,14 +1,22 @@
 import React from 'react'
 import './MainframeView.css';
 import Countdown from 'react-countdown';
-import moment from 'moment'
 
 export default function MainframeView(props) {
 
-    let todayDate = moment(new Date());
-    let liftOff = moment(props.nextLaunch.date_utc);
-    let diff = liftOff.diff(todayDate);
-    let timeLeft = moment.utc(diff).format('x');
+    let todayDate = new Date();
+    console.log(todayDate)
+    let todayMill = todayDate.getTime()
+    console.log(todayMill)
+
+    let liftOff = new Date(props.nextLaunch.date_utc);
+    console.log(liftOff)
+    let launchMill = liftOff.getTime()
+    console.log(launchMill)
+
+    let diff = launchMill - todayMill;
+    console.log(diff)
+
 
   return (
     <div>
@@ -40,7 +48,7 @@ export default function MainframeView(props) {
               <h1>10</h1>
               <h2>Seconds</h2>
             </div>
-            <Countdown date={Date.now() + parseInt(timeLeft)} />
+            <Countdown key={Date.now()} date={Date.now() + diff } />
           </div>
         </div>
       </div>
