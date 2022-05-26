@@ -95,8 +95,8 @@ export default function LaunchCard(props) {
         <div>
             <div class="row">
                 <div class="col text-center">
-                    <button type="button" className="mt-5 pr-3 btn btn-secondary" onClick={sortListUpcoming}>Upcomning</button>
-                     <button type="button" className="mt-5 pl-3 btn btn-success" onClick={sortListCompleted}>Completed</button>
+                    <button type="button" className="mt-5 pr-3 btn btn-warning rounded-0" onClick={sortListUpcoming}>Upcoming</button>
+                     <button type="button" className="mt-5 pl-3 btn btn-success rounded-0" onClick={sortListCompleted}>Completed</button>
                 </div>
             </div>
 
@@ -107,7 +107,6 @@ export default function LaunchCard(props) {
                 <>
                     {list.map((info, index) => {
                         return (
-                            <div>
                                 <div className="card launchCard" key={info.id}>
                                     <div className="card-body launchCard-body">
                                         <div className='left-side'>
@@ -125,7 +124,7 @@ export default function LaunchCard(props) {
 
                                             <div className='space-item-info'>
                                                 <h5 className="card-title">Status</h5>
-                                                <h4 className="card-text">{info.upcoming ? 'Upcoming' : 'Completed'}</h4>
+                                                <h4 className="card-text">{info.upcoming ? 'Upcoming'  : 'Completed'}</h4>
                                             </div>
 
                                             <div className='space-item-info'>
@@ -143,17 +142,17 @@ export default function LaunchCard(props) {
                                                 <h4 className="card-text">{info.rocket}</h4>
 
                                             </div>
-                                        </div>
-
-                                    </div>
-                                    <button type="button"className="btn btn-info btn-block" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
-                                    <button type="button" className="btn btn-primary btn-block" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Launch demo modal
-                                    </button>
+                                            <div class="d-grid gap-2 col-6 mx-auto">
+                                                <button type="button"className="btn bg-light bg-gradient  rounded-0 p-9" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
+                                                <button type="button" className="btn btn-primary rounded-0 p-9" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                    Launch demo modal
+                                                </button>
+                                            </div>
+                                         </div>
+                                    </div> 
                                 </div>
-
-                                
-                            </div>
+                              
+                            
                         )
                     })}
                 </>
@@ -162,7 +161,7 @@ export default function LaunchCard(props) {
                 :
                 <>
                     {props.launchInfo.map((info, index) => {
-                        return (
+                        return ( 
                             <div className="card launchCard" key={info.id}>
                                 <div className="card-body launchCard-body">
                                     <div className='left-side'>
@@ -181,6 +180,7 @@ export default function LaunchCard(props) {
                                         <div className='space-item-info'>
                                             <h5 className="card-title">Status</h5>
                                             <h4 className="card-text">{info.upcoming ? 'Upcoming' : 'Completed'}</h4>
+                                            
                                         </div>
 
                                         <div className='space-item-info'>
@@ -197,15 +197,15 @@ export default function LaunchCard(props) {
                                             <h5 className="card-title">Rocket</h5>
                                             <h4 className="card-text">{info.rocket}</h4>
                                         </div>
-
-                                        <button type className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
-                                        <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <div class="d-grid gap-2 col-6 mx-auto">
+                                            <button type="button"className="btn btn-info rounded-0" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
+                                            <button type="button" className="btn btn-primary rounded-0" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            
                                             Launch demo modal
-                                        </button>
-                                    </div>
-
+                                            </button>
+                                        </div>
+                                    </div>          
                                 </div>
-
                             </div>
                         )
                     })}
