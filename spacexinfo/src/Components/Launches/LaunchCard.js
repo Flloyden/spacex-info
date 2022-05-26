@@ -67,15 +67,20 @@ export default function LaunchCard(props) {
 
     function addToLocalStorage(e) {
         if (localStorage.getItem("addedLaunchCard") === null) {
-            let myLaunchList = []
-            myLaunchList.push(props.launchInfo[e.target.id])
-            localStorage.setItem("addedLaunchCard", JSON.stringify(myLaunchList));
+            let myNewLaunchList = {}
+            myNewLaunchList[props.launchInfo[e.target.id].id] = props.launchInfo[e.target.id]
+            localStorage.setItem("addedLaunchCard", JSON.stringify(myNewLaunchList));
 
         }
         else {
-            let saveMyLaunch = JSON.parse(localStorage.getItem("addedLaunchCard"));
-            saveMyLaunch.push(props.launchInfo[e.target.id])
-            localStorage.setItem("addedLaunchCard", JSON.stringify(saveMyLaunch));
+            let saveMyLaunchList = JSON.parse(localStorage.getItem("addedLaunchCard"));
+            if (props.launchInfo[e.target.id].id in saveMyLaunchList) {
+                // Already saved to list
+            } else {
+                saveMyLaunchList[props.launchInfo[e.target.id].id] = props.launchInfo[e.target.id]
+                localStorage.setItem("addedLaunchCard", JSON.stringify(saveMyLaunchList));
+            }
+            
         }
     }
 
@@ -153,7 +158,7 @@ export default function LaunchCard(props) {
 
                                             <div class="d-grid gap-2 col-6 mx-auto">
 
-                                                <button type="button"className="btn bg-light bg-gradient  rounded-0 p-9" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
+                                                <button type="button"className="btn btn-info bg-gradient  rounded-0 p-9" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
                                                 <button type="button" className="btn btn-primary rounded-0 p-9" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                     Read more
                                                 </button>
