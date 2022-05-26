@@ -1,11 +1,12 @@
 import React from 'react'
 
 
+
 export default function MyLaunches() {
 
   if (localStorage.getItem("addedLaunchCard") === null) {
     return (
-      <div>Inget sparat!</div>
+      <div class="m-4 bg-light"><h2 className="m-2">The list of "My Launches" is empty...</h2></div>
     )
   } else {
     let newObject = window.localStorage.getItem("addedLaunchCard");
@@ -55,19 +56,14 @@ export default function MyLaunches() {
               </div>
 
             </div>
-            <a href="#" className="btn btn-primary">Read more</a>
-            <a href="#" className="btn btn-danger">Delete</a>
+            <a href="#" className="btn btn-primary">Launch demo modal</a>
+            <a href="#" className="btn btn-danger" id onlick >Delete</a>
 
           </div>
 
         )
       })}
       </div>
-
-
-
-
-
 
 
 
