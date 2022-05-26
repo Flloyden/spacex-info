@@ -6,7 +6,6 @@
     padding-left: 50px;
 }
 
-
 li {
     list-style: none;
     transition: 0.2s ease-in-out;
@@ -23,14 +22,9 @@ li:hover {
 }
 
 .rounded {
-    position: absolute !important;
-    margin-top: 20px !important;
-    margin-left: 20px !important;
-    float: left;
-    border: none;
-
+    background-color: rgba(0, 0, 0, 0);
 }
 
-span {
-    font-size: 40px;
+.menu-rocket {
+    width: 50px;
 }

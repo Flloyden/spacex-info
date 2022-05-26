@@ -13,12 +13,8 @@
   }
 }
 
-.col-lg-6 {
-  margin-top: 70px;
-}
-
-.rounded {
-  margin: auto;
+.img-max {
+  max-width: 300px;
 }
 
 .App-header {
