@@ -89,14 +89,16 @@ export default function LaunchCard(props) {
     }
 
     */
-    
+
 
     return (
         <div>
             <div class="row">
                 <div class="col text-center">
+
                     <button type="button" className="mt-5 pr-3 btn btn-warning rounded-0" onClick={sortListUpcoming}>Upcoming</button>
                      <button type="button" className="mt-5 pl-3 btn btn-success rounded-0" onClick={sortListCompleted}>Completed</button>
+
                 </div>
             </div>
 
@@ -149,7 +151,7 @@ export default function LaunchCard(props) {
                                             
                                             Launch demo modal
                                             </button>
-                                            </div>
+                                            </div
                                     
 
                             </div>
@@ -210,9 +212,7 @@ export default function LaunchCard(props) {
                                         </div>
                                     </div>          
                                 </div>
-
-                                   
-                                </div>       
+                                </div>      
                         )
                     })}
                 </>
@@ -221,6 +221,7 @@ export default function LaunchCard(props) {
             <div className="modal fade" id="exampleModal" tabIndex="-1">
                 <LaunchModal launch={thisRocket} />
             </div>
+            
         </div>
     )
 }
