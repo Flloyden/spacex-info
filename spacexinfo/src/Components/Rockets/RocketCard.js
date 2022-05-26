@@ -6,7 +6,7 @@ export default class RocketCard extends Component {
         super(props);
         this.state = {
             id: 'N/A',
-            name: "N/A",
+            name: "Select a rocket to read more",
             type: "N/A",
             active: "N/A",
             stages: "N/A",
@@ -18,7 +18,7 @@ export default class RocketCard extends Component {
             company: "N/A",
             wikipedia: "N/A",
             description: "",
-            flickr_images: "N/A"
+            flickr_images: "./SpaceX-logo.png"
         }
 
 
@@ -28,7 +28,7 @@ export default class RocketCard extends Component {
     chooseRocket = (e) => {
         console.log(e)
 
-        let thisRocket = this.props.rocketInfo[e.target.selectedIndex]
+        let thisRocket = this.props.rocketInfo[e.target.selectedIndex - 1]
         //console.log(e.target.value)
         console.log(this.props.rocketInfo[e.target.selectedIndex])
 
@@ -70,40 +70,35 @@ export default class RocketCard extends Component {
                 </select>
 
 
-
                 <div className="card mb-3">
-                    <div className="row g-0">
-                        <div className="col-md-4">
-                            <img src={this.state.flickr_images} className="img-fluid rounded-start" alt="..."></img>
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title text-light">{this.state.name}</h5>
-                                <p>{this.state.description}</p>
+                    <img src={this.state.flickr_images} className="card-img-top" alt="..."></img>
+                    <div className="card-body rocket-card">
+                            <h5 className="card-title text-light">{this.state.name}</h5>
+                            <p className="card-text">{this.state.description}</p>
+                            <div className="col">
+                                <h6 className="text-light">Specs</h6>
+                                <ul className="bg-light rounded">
+                                    <li>
+                                        ID: {this.state.id}
+                                    </li>
+                                    <li>
+                                        Type: {this.state.type}
+                                    </li>
+                                    <li>
+                                        Active: {this.state.active}
+                                    </li>
+                                    <li>
+                                        Boosters: {this.state.boosters}
+                                    </li>
+                                    <li>
+                                        Company: {this.state.company}
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                    <div className="col">
-                        <h6 className="text-light">Specs</h6>
-                        <ul className="bg-light rounded">
-                            <li>
-                                ID: {this.state.id}
-                            </li>
-                            <li>
-                                Type: {this.state.type}
-                            </li>
-                            <li>
-                                Active: {this.state.active}
-                            </li>
-                            <li>
-                                Boosters: {this.state.boosters}
-                            </li>
-                            <li>
-                                Company: {this.state.company}
-                            </li>
-                        </ul>
-                    </div>
                 </div>
+
+               
 
             </div>
 

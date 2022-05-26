@@ -6,7 +6,7 @@
     padding-left: 50px;
 }
 
-li {
+.offcanvas-body>li {
     list-style: none;
     transition: 0.2s ease-in-out;
     padding: 20px;
@@ -15,16 +15,23 @@ li {
     color: rgba(0, 0, 0, 0.493);
 }
 
-li:hover {
+.offcanvas-body>li:hover {
     cursor: pointer;
     background-color: #8a8a8a7a;
     color: #000;
 }
 
-.rounded {
+.menu-button-color {
     background-color: rgba(0, 0, 0, 0);
 }
 
 .menu-rocket {
     width: 50px;
+  
+.menuButton {
+    position: absolute !important;
+    margin-top: 20px !important;
+    margin-left: 20px !important;
+    float: left;
+    border: none;
 }

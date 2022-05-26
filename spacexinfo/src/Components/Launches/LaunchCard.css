@@ -1,13 +1,15 @@
-.card {
+.launchCard {
     background-color: rgb(105, 105, 105);
     max-width: 700px;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
+
 }
 
-.card-body {
+.launchCard-body {
     padding: 20px;
+    min-width: fit-content;
 }
 
 .left-side {
@@ -15,7 +17,7 @@
     float: left;
 }
 
-.left-side img{
+.left-side img {
     width: 100%;
     padding-top: 15px;
     padding-bottom: 10px;
@@ -35,13 +37,13 @@
     min-width: 170px;
 }
 
-.space-item-info h5{
+.space-item-info h5 {
     font-size: 16px;
     color: rgb(160, 160, 160);
     margin: 0px;
 }
 
-.space-item-info h4{
+.space-item-info h4 {
     font-size: 20px;
     color: #fff;
 }

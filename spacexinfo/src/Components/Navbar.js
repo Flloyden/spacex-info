@@ -5,7 +5,7 @@ export default function Navbar(props) {
 
   return (
     <div>
-            <button className="rounded border"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="rounded menu-button-color border"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
                 <img className='img-fluid menu-rocket pl-1 pr-1' src='./rocket.gif' alt='Moving rocket from JoyPixels' />
                 <h6 className='text-light font'>MENU</h6>
             </button>
