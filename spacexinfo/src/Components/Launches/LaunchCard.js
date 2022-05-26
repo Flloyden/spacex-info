@@ -79,20 +79,26 @@ export default function LaunchCard(props) {
         }
     }
 
-
-
-
     /*
     function deleteMyLaunchCard(id) {
-        setTodos(todos.filter((item) => item.id !== id));
+        const remove = (id) => {
+            let filteredArr = list.filter((el) => el !== id);
+            setItems(filteredArr);
+       
+         } 
     }
+
     */
+    
 
     return (
         <div>
-            <button type="button" className="btn btn-secondary" onClick={sortListUpcoming}>Upcomning</button>
-            <button type="button" className="btn btn-success" onClick={sortListCompleted}>Completed</button>
-
+            <div class="row">
+                <div class="col text-center">
+                    <button type="button" className="mt-5 pr-3 btn btn-secondary" onClick={sortListUpcoming}>Upcomning</button>
+                     <button type="button" className="mt-5 pl-3 btn btn-success" onClick={sortListCompleted}>Completed</button>
+                </div>
+            </div>
 
             {/* 
             start-page is set to upcoming launches by default
@@ -140,9 +146,8 @@ export default function LaunchCard(props) {
                                         </div>
 
                                     </div>
-                                    <a href="#" className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</a>
-                                </div>
-
+                                    <button type="button"className="btn btn-info btn-block" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
+                                    
                                 <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Read more
                                 </button>
@@ -190,14 +195,15 @@ export default function LaunchCard(props) {
                                             <h5 className="card-title">Rocket</h5>
                                             <h4 className="card-text">{info.rocket}</h4>
                                         </div>
-                                    </div>
-                                </div>
 
+                                        <button type className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
 
-                                <a href="#" className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</a>
                                 <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Read more
                                 </button>
+
+                                </div>
+
 
                             </div>
                         )
