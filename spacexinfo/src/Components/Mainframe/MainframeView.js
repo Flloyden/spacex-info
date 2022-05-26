@@ -4,23 +4,24 @@ import Countdown from 'react-countdown';
 
 export default function MainframeView(props) {
 
-    let todayDate = new Date();
-    console.log(todayDate)
-    let todayMill = todayDate.getTime()
-    console.log(todayMill)
 
-    let liftOff = new Date(props.nextLaunch.date_utc);
-    console.log(liftOff)
-    let launchMill = liftOff.getTime()
-    console.log(launchMill)
+  let todayDate = new Date();
 
-    let diff = launchMill - todayMill;
-    console.log(diff)
+  let todayMill = todayDate.getTime()
+
+  let liftOff = new Date(props.nextLaunch.date_utc);
+
+  let launchMill = liftOff.getTime()
+
+
+  let diff = launchMill - todayMill;
+
+
 
 
   return (
     <div>
-        <div className='info'>
+      <div className='info'>
         <div className='image-container'>
           <div className='logo'>
             <img className='img-fluid' src='./SpaceX-logo.png' alt='SpaceX logo' />
@@ -30,7 +31,7 @@ export default function MainframeView(props) {
           </div>
         </div>
         <div className='launch-info'>
-        <h1>Next Lauch: {props.nextLaunch.name}</h1>
+          <h1>Next Lauch: {props.nextLaunch.name}</h1>
           <div className='countdown'>
             <div className='item'>
               <h1>10</h1>
@@ -48,7 +49,10 @@ export default function MainframeView(props) {
               <h1>10</h1>
               <h2>Seconds</h2>
             </div>
+
+
             <Countdown key={Date.now()} date={Date.now() + diff } />
+
           </div>
         </div>
       </div>

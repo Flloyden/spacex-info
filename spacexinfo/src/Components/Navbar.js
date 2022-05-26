@@ -5,8 +5,8 @@ export default function Navbar(props) {
 
   return (
     <div>
-            <button className="navbar-light bg-light rounded"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
+      <button className="navbar-light bg-light menuButton"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon buttonSize"></span>
             </button>
 
             <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
