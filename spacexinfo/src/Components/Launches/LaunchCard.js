@@ -166,7 +166,7 @@ export default function LaunchCard(props) {
                                         Read more
                                     </button>
                                 </div>
-                            </div>
+                          
 
                         )
                     })}
@@ -224,6 +224,7 @@ export default function LaunchCard(props) {
                                     </div>
                                 </div>
                             </div>
+                            
 
                         )
                     })}
