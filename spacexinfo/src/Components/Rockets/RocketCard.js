@@ -93,29 +93,29 @@ export default class RocketCard extends Component {
                                 <thead>
                                     <tr>
 
-                                        <th colspan="3">Rocket Name: {this.state.name}</th>
+                                        <th colSpan="3">Rocket Name: {this.state.name}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
 
                                         <td>Height<h4>{this.state.height}m</h4></td>
-                                        <td><img src="./startup.png" className="img-fluid rocketSize" alt="..."></img></td>
+                                        <td><img src="./images/startup.png" className="img-fluid rocketSize" alt="..."></img></td>
                                         <td></td>
-                                        <td><img src="./weight.png" className="img-fluid iconSize" alt="..."></img></td>
+                                        <td><img src="./images/weight.png" className="img-fluid iconSize" alt="..."></img></td>
                                         <td><h3>{this.state.mass} kg</h3></td>
                                     </tr>
                                     <tr>
                                         <td></td>
                                         <td>Diameter<h4>{this.state.width}m</h4></td>
                                         <td></td>
-                                        <td><img src="./engine.png" className="img-fluid iconSize" alt="..."></img></td>
+                                        <td><img src="./images/engine.png" className="img-fluid iconSize" alt="..."></img></td>
                                         <td><h3>{this.state.engineThrust} kN</h3></td>
                                     </tr>
                                 </tbody>
                             </table>
 
-                            <table class="table table-dark table-striped rounded">
+                            <table className="table table-dark table-striped rounded">
 
                                 <tbody>
                                     <tr>

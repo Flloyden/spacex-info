@@ -1,0 +1,26 @@
+.offcanvas-body {
+    padding: 0;
+}
+
+.offcanvas-body>ul>.items {
+    padding-left: 50px;
+}
+
+.offcanvas-body>ul {
+    padding: 0;
+}
+
+.offcanvas-body>ul>li {
+    list-style: none;
+    transition: 0.2s ease-in-out;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.493);
+}
+
+.offcanvas-body>ul>li:hover {
+    cursor: pointer;
+    background-color: #8a8a8a7a;
+    color: #000;
+}

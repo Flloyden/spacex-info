@@ -45,7 +45,8 @@ export default function MyLaunches() {
     let newObject = localStorage.getItem("addedLaunchCard");
     let showLaunchCard = (JSON.parse(newObject));
     return (
-      <div class="text-muted text-center">
+      <div className="text-muted text-center">
+
         {
           Object.values(showLaunchCard).map((info, i) => (
             /* a launchcard is shown when added to the list of 'MyLaunches' */
