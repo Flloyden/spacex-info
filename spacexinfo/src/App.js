@@ -5,9 +5,13 @@ import Mainframe from './Components/Mainframe/Mainframe';
 import Navbar from './Components/Navbar/Navbar';
 import Rockets from './Components/Rockets/Rockets';
 import MyLaunches from './Components/MyLaunches/MyLaunches';
+import { Fragment } from 'react';
+import ScrollButton from './Components/ScrollButton/ScrollButton';
+import { Content } from './Components//ScrollButton/Styles';
+
 
 function App() {
-  const [mainFrame, setMainFrame] = useState([
+  const [mainFrame] = useState([
     {
       id: 1,
       title: "Home",
@@ -30,10 +34,13 @@ function App() {
       title: "My Launches"
       ,
       frame: <MyLaunches />
-    }
-  ]);
 
-  const [frame, setFrame] = useState(<Mainframe />)
+    },
+    
+      
+]);
+
+const [frame, setFrame] = useState(<Mainframe />)
 
   function changeFrame(id) {
     setFrame(id)
@@ -50,6 +57,13 @@ function App() {
         </div>
         <div className='col-3'>
         </div>
+        <main className="container frame-content row m-auto">       
+          {frame}
+        </main>
+        <Fragment>
+          <Content />
+          <ScrollButton />
+        </Fragment>
       </div>
       <main className="container frame-content row m-auto">
         {frame}

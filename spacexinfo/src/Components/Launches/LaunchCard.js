@@ -81,19 +81,11 @@ export default function LaunchCard(props) {
             }
             
         }
+    
+        
+
+        
     }
-
-    /*
-    function deleteMyLaunchCard(id) {
-        const remove = (id) => {
-            let filteredArr = list.filter((el) => el !== id);
-            setItems(filteredArr);
-       
-         } 
-    }
-
-    */
-
     return (
         <div>
             <div className="row">
@@ -104,6 +96,10 @@ export default function LaunchCard(props) {
 
                 </div>
             </div>
+
+        <div>
+           
+        </div>    
 
             {/* 
             start-page is set to upcoming launches by default
@@ -118,56 +114,58 @@ export default function LaunchCard(props) {
                             launchPatch = info.links.patch.small
                         }
                         return (
+                            <div class="row">
                                 <div className="card launchCard" key={info.id}>
                                     <div className="card-body launchCard-body">
                                         <div className='left-side'>
-                                            <img src={launchPatch} alt='spacex mission' />
+                                            <img src={launchPatch} className="LaunchPicture" alt='spacex mission' />
                                         </div>
                                         <div className='right-side'>
-                                            <div className='space-item-info'>
+                                            <div className='space-item-info m-2'>
                                                 <h5 className="card-title">Flight</h5>
                                                 <h4 className="card-text">{info.flight_number}</h4>
                                             </div>
-                                            <div className='space-item-info'>
+                                            <div className='space-item-info m-2'>
                                                 <h5 className="card-title">Mission name</h5>
                                                 <h4 className="card-text">{info.name}</h4>
                                             </div>
 
-                                            <div className='space-item-info'>
+                                            <div className='space-item-info m-2'>
                                                 <h5 className="card-title">Status</h5>
                                                 <h4 className="card-text">{info.upcoming ? 'Upcoming'  : 'Completed'}</h4>
                                             </div>
 
-                                            <div className='space-item-info'>
+                                            <div className='space-item-info m-2'>
                                                 <h5 className="card-title">Time</h5>
                                                 <h4 className="card-text">{info.date_local}</h4>
                                             </div>
 
-                                            <div className='space-item-info'>
+                                            <div className='space-item-info m-2'>
                                                 <h5 className="card-title">Launchpad</h5>
                                                 <h4 className="card-text">{info.launchpad}</h4>
                                             </div>
 
-                                            <div className='space-item-info'>
+                                            <div className='space-item-info m-2'>
                                                 <h5 className="card-title">Rocket</h5>
                                                 <h4 className="card-text">{info.rocket}</h4>
 
                                             </div>
 
-                                            <div className="d-grid gap-2 col-6 mx-auto">
 
+                                            <div className="d-grid gap-2 col-6 mx-auto mt-4">
                                                 <button type="button"className="btn btn-info bg-gradient  rounded-0 p-9" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
                                                 <button type="button" className="btn btn-primary rounded-0 p-9" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                     Read more
                                                 </button>
                                             </div>
-                                         
+
+                                           
                                         </div>
+                                        
                                      </div>
-                    </div>
-
-
-
+                                </div>
+                            </div>
+                            
                         )
                     })}
                 </>
@@ -183,22 +181,23 @@ export default function LaunchCard(props) {
                             launchPatch = info.links.patch.small
                         }
                         return ( 
+
                             <div className="card launchCard" key={info.id}>
                                 <div className="card-body launchCard-body">
                                     <div className='left-side'>
-                                        <img src={launchPatch} alt='spacex mission' />
+                                        <img src={launchPatch} className="LaunchPicture" alt='spacex mission' />
                                     </div>
                                     <div className='right-side'>
-                                        <div className='space-item-info'>
+                                        <div className='space-item-info m-1'>
                                             <h5 className="card-title">Flight</h5>
                                             <h4 className="card-text">{info.flight_number}</h4>
                                         </div>
-                                        <div className='space-item-info'>
+                                        <div className='space-item-info m-1'>
                                             <h5 className="card-title">Mission name</h5>
                                             <h4 className="card-text">{info.name}</h4>
                                         </div>
 
-                                        <div className='space-item-info'>
+                                        <div className='space-item-info m-1'>
                                             <h5 className="card-title">Status</h5>
                                             {info.upcoming ? 
                                             <div className='upcoming'>
@@ -212,12 +211,12 @@ export default function LaunchCard(props) {
                                             
                                         </div>
 
-                                        <div className='space-item-info'>
+                                        <div className='space-item-info m-1'>
                                             <h5 className="card-title">Time</h5>
                                             <h4 className="card-text">{new Date(info.date_local).toLocaleDateString("sv-SE")}</h4>
                                         </div>
 
-                                        <div className='space-item-info'>
+                                        <div className='space-item-info m-1'>
                                             <h5 className="card-title">Launchpad</h5>
                                             {props.launchPad.map((test, index) => {
                                                 return (
@@ -232,7 +231,7 @@ export default function LaunchCard(props) {
                                             })}
                                         </div>
 
-                                        <div className='space-item-info'>
+                                        <div className='space-item-info m-1'>
                                             <h5 className="card-title">Rocket</h5>
                                             {props.rocketName.map((details, index) => {
                                                 return (
@@ -248,16 +247,18 @@ export default function LaunchCard(props) {
                                         </div>
 
 
-                                        <div className="d-grid gap-2 col-6 mx-auto">
+                                        <div className="d-grid gap-2 col-6 mx-auto mt-4">
                                             <button type="button"className="btn btn-info rounded-0" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
                                             <button type="button" className="btn btn-primary rounded-0" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            
+                                    
                                              Read more
                                             </button>
                                         </div>
                                     </div>          
                                 </div>
-                             </div>      
+                             </div> 
+                             
+                             
                         )
                     })}
                 </>
