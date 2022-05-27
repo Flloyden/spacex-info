@@ -93,7 +93,7 @@ export default class RocketCard extends Component {
                                 <thead>
                                     <tr>
 
-                                        <th colspan="3">Rocket Name: {this.state.name}</th>
+                                        <th colSpan="3">Rocket Name: {this.state.name}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -115,7 +115,7 @@ export default class RocketCard extends Component {
                                 </tbody>
                             </table>
 
-                            <table class="table table-dark table-striped rounded">
+                            <table className="table table-dark table-striped rounded">
 
                                 <tbody>
                                     <tr>
