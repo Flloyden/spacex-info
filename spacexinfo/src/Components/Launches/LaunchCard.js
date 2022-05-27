@@ -98,8 +98,8 @@ export default function LaunchCard(props) {
 
     return (
         <div>
-            <div class="row">
-                <div class="col text-center">
+            <div className="row">
+                <div className="col text-center">
 
                     <button type="button" className="mt-5 pr-3 btn btn-warning rounded-0" onClick={sortListUpcoming}>Upcoming</button>
                      <button type="button" className="mt-5 pl-3 btn btn-success rounded-0" onClick={sortListCompleted}>Completed</button>
@@ -156,7 +156,7 @@ export default function LaunchCard(props) {
 
                                             </div>
 
-                                            <div class="d-grid gap-2 col-6 mx-auto">
+                                            <div className="d-grid gap-2 col-6 mx-auto">
 
                                                 <button type="button"className="btn btn-info bg-gradient  rounded-0 p-9" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
                                                 <button type="button" className="btn btn-primary rounded-0 p-9" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -222,7 +222,7 @@ export default function LaunchCard(props) {
                                         </div>
 
 
-                                        <div class="d-grid gap-2 col-6 mx-auto">
+                                        <div className="d-grid gap-2 col-6 mx-auto">
                                             <button type="button"className="btn btn-info rounded-0" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
                                             <button type="button" className="btn btn-primary rounded-0" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             
