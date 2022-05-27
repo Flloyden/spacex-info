@@ -32,6 +32,27 @@
     padding-top: 10px;
     padding-bottom: 10px;
     min-width: 170px;
+    text-align: left;
+    position: relative;
+    min-height: 70px;
+}
+
+.rocket-name {
+    position: absolute;
+    top: 1;
+}
+
+.launch-pad {
+    position: absolute;
+    top: 1;
+}
+
+.space-item-info > .upcoming > h4{
+    color: rgb(255, 217, 0);
+}
+
+.space-item-info > .completed > h4 {
+    color: rgb(76, 233, 76);
 }
 
 .space-item-info h5 {

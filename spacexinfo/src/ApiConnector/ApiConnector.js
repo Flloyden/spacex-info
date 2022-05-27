@@ -9,6 +9,32 @@ export default function ApiConnector2(props) {
 
     // declaring state variable
     const [SpaceXResponse, setLaunchInfo] = useState([]);
+    const [SpaceXRockets, setSpaceXRockets] = useState([]);
+    const [launchPadInfo, setLaunchPadInfo] = useState([]);
+
+    // Initial request
+    useEffect(() => {
+        // GET request using axios inside useEffect React hook
+        axios.get(`https://api.spacexdata.com/v4/rockets`)
+            .then(function (response) {
+                // handle success
+                setSpaceXRockets(response.data)
+            })
+
+        // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    }, []);
+
+    // Initial request
+    useEffect(() => {
+        // GET request using axios inside useEffect React hook
+        axios.get(`https://api.spacexdata.com/v4/launchpads`)
+            .then(function (response) {
+                // handle success
+                setLaunchPadInfo(response.data)
+            })
+
+        // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    }, []);
 
     useEffect(() => {
         // GET request using axios inside useEffect React hook
@@ -30,7 +56,7 @@ export default function ApiConnector2(props) {
     }, []);
 
     if (props.endpoint === "v4/launches") {
-        return (<LaunchCard launchInfo={SpaceXResponse} />)
+        return (<LaunchCard launchInfo={SpaceXResponse} rocketName={SpaceXRockets} launchPad={launchPadInfo} />)
     
     } else if (props.endpoint === "v4/rockets") {
         
