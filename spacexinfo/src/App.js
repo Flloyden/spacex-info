@@ -65,9 +65,6 @@ const [frame, setFrame] = useState(<Mainframe />)
           <ScrollButton />
         </Fragment>
       </div>
-      <main className="container frame-content row m-auto">
-        {frame}
-      </main>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import RocketCard from '../Components/Rockets/RocketCard';
 import MainframeView from '../Components/Mainframe/MainframeView';
 
 
-export default function ApiConnector2(props) {
+export default function ApiConnector(props) {
 
     // declaring state variable
     const [SpaceXResponse, setLaunchInfo] = useState([]);
