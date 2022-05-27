@@ -5,9 +5,7 @@ import Mainframe from './Components/Mainframe/Mainframe';
 import Navbar from './Components/Navbar/Navbar';
 import Rockets from './Components/Rockets/Rockets';
 import MyLaunches from './Components/MyLaunches/MyLaunches';
-import { Fragment } from 'react';
 import ScrollButton from './Components/ScrollButton/ScrollButton';
-import { Content } from './Components//ScrollButton/Styles';
 
 
 function App() {
@@ -60,10 +58,7 @@ const [frame, setFrame] = useState(<Mainframe />)
         <main className="container frame-content row m-auto">       
           {frame}
         </main>
-        <Fragment>
-          <Content />
           <ScrollButton />
-        </Fragment>
       </div>
     </div>
   );
