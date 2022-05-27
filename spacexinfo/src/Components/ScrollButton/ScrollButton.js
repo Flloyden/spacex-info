@@ -6,15 +6,15 @@ import { Button } from './Styles';
 const ScrollButton = () =>{
   /*The 'scroll button' to help the user to reach the top of the page */
   
-  const [setVisible] = useState(false)
+  var setVisible = false
   
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 300){
-      setVisible(true)
+      setVisible = true
     } 
     else if (scrolled <= 300){
-      setVisible(false)
+      setVisible = false
     }
   };
   
@@ -31,7 +31,7 @@ const ScrollButton = () =>{
   
   return (
     <Button>
-    <FaArrowCircleUp onClick={scrollToTop} class="m-2"
+    <FaArrowCircleUp onClick={scrollToTop} className="m-2"
       />
    </Button>
     

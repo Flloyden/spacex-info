@@ -114,7 +114,7 @@ export default function LaunchCard(props) {
                             launchPatch = info.links.patch.small
                         }
                         return (
-                            <div class="row">
+                            <div className="row">
                                 <div className="card launchCard" key={info.id}>
                                     <div className="card-body launchCard-body">
                                         <div className='left-side'>

@@ -50,7 +50,7 @@ export default function MyLaunches() {
         {
           Object.values(showLaunchCard).map((info, i) => (
             /* a launchcard is shown when added to the list of 'MyLaunches' */
-            <div class="row">
+            <div className="row">
               <div className="card rounded-0 bg-secondary" key={"Launches" + info.id}>
                 <div className="card-body">
                   <div className='col-sm-2 col-sm-offset-5 text-center'>
