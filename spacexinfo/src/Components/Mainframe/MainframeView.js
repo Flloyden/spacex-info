@@ -1,5 +1,6 @@
 import React from 'react'
 import Countdown from 'react-countdown';
+import './MainframeView.css'
 
 export default function MainframeView(props) {
 
@@ -20,8 +21,8 @@ export default function MainframeView(props) {
 
   return (
       <div className='launch-info text-center text-white d-flex justify-content-center'>
-        <div className='align-self-end'>
-          <h1>Next Lauch: {props.nextLaunch.name}</h1>
+        <div className='align-self-end launch-text'>
+          <h1>Next Launch: {props.nextLaunch.name}</h1>
           <h2><Countdown key={Date.now()} date={Date.now() + diff } /></h2>
           <h6>DD : HH : MM : SS</h6>
         </div>
