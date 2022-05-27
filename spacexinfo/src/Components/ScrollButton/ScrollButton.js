@@ -1,22 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {FaArrowCircleUp} from 'react-icons/fa';
-import { Button } from './Styles';
 
   
-const ScrollButton = () =>{
+const ScrollButton = () => {
   /*The 'scroll button' to help the user to reach the top of the page */
-  
-  var setVisible = false
-  
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300){
-      setVisible = true
-    } 
-    else if (scrolled <= 300){
-      setVisible = false
-    }
-  };
   
   const scrollToTop = () =>{
     /*The 'scroll button' in action */
@@ -27,13 +14,10 @@ const ScrollButton = () =>{
     });
   };
   
-  window.addEventListener('scroll', toggleVisible);
-  
   return (
-    <Button>
-    <FaArrowCircleUp onClick={scrollToTop} className="m-2"
-      />
-   </Button>
+    <div className='fs-1 text-light'>
+      <FaArrowCircleUp className="position-fixed bottom-0 end-0 m-4" onClick={scrollToTop} role='button' />
+    </div>
     
   );
 }
