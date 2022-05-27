@@ -181,48 +181,51 @@ export default function LaunchCard(props) {
                             launchPatch = info.links.patch.small
                         }
                         return ( 
-
-                            <div className="card launchCard" key={info.id}>
-                                <div className="card-body launchCard-body">
-                                    <div className='left-side'>
-                                        <img src={launchPatch} className="LaunchPicture" alt='spacex mission' />
+                            <div className="card launchCard bg-secondary rounded m-auto mt-4" key={info.id}>
+                                <div className="card-body launchCard-body row">
+                                    <div className='left-side col-4 text-center'>
+                                        <img src={launchPatch} className="LaunchPicture pt-4 w-100" alt='spacex mission' />
+                                        <div className="d-grid gap-2 pt-4 bottom-0 text-center pb-4">
+                                            <button type="button"className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
+                                            <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">Read more</button>
+                                        </div>
                                     </div>
-                                    <div className='right-side'>
-                                        <div className='space-item-info m-1'>
-                                            <h5 className="card-title">Flight</h5>
-                                            <h4 className="card-text">{info.flight_number}</h4>
+                                    <div className='right-side col-8 d-flex flex-wrap align-items-start mb-3'>
+                                        <div className='space-item-info pt-4 w-50'>
+                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Flight</h5>
+                                            <h4 className="card-text text-white fs-5">{info.flight_number}</h4>
                                         </div>
-                                        <div className='space-item-info m-1'>
-                                            <h5 className="card-title">Mission name</h5>
-                                            <h4 className="card-text">{info.name}</h4>
+                                        <div className='space-item-info pt-4 w-50'>
+                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Mission name</h5>
+                                            <h4 className="card-text text-white fs-5">{info.name}</h4>
                                         </div>
 
-                                        <div className='space-item-info m-1'>
-                                            <h5 className="card-title">Status</h5>
+                                        <div className='space-item-info pt-4 w-50'>
+                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Status</h5>
                                             {info.upcoming ? 
                                             <div className='upcoming'>
-                                                <h4 className="card-text">Upcoming</h4>
+                                                <h4 className="card-text fs-5 text-warning">Upcoming</h4>
                                             </div>
                                             : 
                                             <div className='completed'>
-                                                <h4 className="card-text">Completed</h4>
+                                                <h4 className="card-text fs-5 text-success">Completed</h4>
                                             </div>
                                             }
                                             
                                         </div>
 
-                                        <div className='space-item-info m-1'>
-                                            <h5 className="card-title">Time</h5>
-                                            <h4 className="card-text">{new Date(info.date_local).toLocaleDateString("sv-SE")}</h4>
+                                        <div className='space-item-info pt-4 w-50'>
+                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Time</h5>
+                                            <h4 className="card-text text-white fs-5">{new Date(info.date_local).toLocaleDateString("sv-SE")}</h4>
                                         </div>
 
-                                        <div className='space-item-info m-1'>
-                                            <h5 className="card-title">Launchpad</h5>
+                                        <div className='space-item-info pt-4 w-50'>
+                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Launchpad</h5>
                                             {props.launchPad.map((test, index) => {
                                                 return (
                                                     <div className='launch-pad' key={index}>
                                                         {info.launchpad === test.id ? 
-                                                        <h4 className="card-text">{test.name}</h4>
+                                                        <h4 className="card-text text-white fs-5">{test.name}</h4>
                                                         :
                                                         <p></p>
                                                         }
@@ -231,28 +234,19 @@ export default function LaunchCard(props) {
                                             })}
                                         </div>
 
-                                        <div className='space-item-info m-1'>
-                                            <h5 className="card-title">Rocket</h5>
+                                        <div className='space-item-info pt-4 w-50'>
+                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Rocket</h5>
                                             {props.rocketName.map((details, index) => {
                                                 return (
                                                     <div className='rocket-name' key={index}>
                                                         {info.rocket === details.id ? 
-                                                        <h4 className="card-text">{details.name}</h4>
+                                                        <h4 className="card-text text-white fs-5">{details.name}</h4>
                                                         :
                                                         <p></p>
                                                         }
                                                     </div>
                                                 )
                                             })}
-                                        </div>
-
-
-                                        <div className="d-grid gap-2 col-6 mx-auto mt-4">
-                                            <button type="button"className="btn btn-info rounded-0" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
-                                            <button type="button" className="btn btn-primary rounded-0" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    
-                                             Read more
-                                            </button>
                                         </div>
                                     </div>          
                                 </div>
