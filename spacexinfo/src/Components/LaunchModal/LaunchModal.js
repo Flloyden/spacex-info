@@ -1,5 +1,4 @@
 import React from 'react'
-import ApiConnector2 from '../../ApiConnector/ApiConnector2'
 
 export default function LaunchModal(props) {
 

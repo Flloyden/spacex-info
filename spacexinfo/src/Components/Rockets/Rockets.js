@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ApiConnector2 from '../../ApiConnector/ApiConnector2';
+import ApiConnector from '../../ApiConnector/ApiConnector';
 
 export default class Rockets extends Component {
     constructor(props) {
@@ -17,7 +17,7 @@ export default class Rockets extends Component {
 
         return (
             <div>
-                <ApiConnector2 endpoint={'v4/rockets'} />
+                <ApiConnector endpoint={'v4/rockets'} />
             </div>
         )
     }

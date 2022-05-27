@@ -46,7 +46,7 @@ function App() {
           <Navbar items={mainFrame} changeFrame={changeFrame} />
         </div>
         <div className='col-6 text-center pt-3'>
-          <img className='img-fluid img-max' src='./SpaceX-logo.png' alt='SpaceX logo' />
+          <img className='img-fluid img-max' src='./images/SpaceX-logo.png' alt='SpaceX logo' />
         </div>
         <div className='col-3'>
         </div>

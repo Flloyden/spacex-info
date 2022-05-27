@@ -1,9 +1,9 @@
 import React from 'react';
-import ApiConnector2 from '../../ApiConnector/ApiConnector2';
+import ApiConnector from '../../ApiConnector/ApiConnector';
 
 export default function Mainframe(props) {
 
   return (
-      <ApiConnector2 endpoint={'v5/launches/next'} />
+      <ApiConnector endpoint={'v5/launches/next'} />
   )
 }
