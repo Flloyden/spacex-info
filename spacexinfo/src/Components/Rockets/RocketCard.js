@@ -100,16 +100,16 @@ export default class RocketCard extends Component {
                                     <tr>
 
                                         <td>Height<h4>{this.state.height}m</h4></td>
-                                        <td><img src="./startup.png" className="img-fluid rocketSize" alt="..."></img></td>
+                                        <td><img src="./images/startup.png" className="img-fluid rocketSize" alt="..."></img></td>
                                         <td></td>
-                                        <td><img src="./weight.png" className="img-fluid iconSize" alt="..."></img></td>
+                                        <td><img src="./images/weight.png" className="img-fluid iconSize" alt="..."></img></td>
                                         <td><h3>{this.state.mass} kg</h3></td>
                                     </tr>
                                     <tr>
                                         <td></td>
                                         <td>Diameter<h4>{this.state.width}m</h4></td>
                                         <td></td>
-                                        <td><img src="./engine.png" className="img-fluid iconSize" alt="..."></img></td>
+                                        <td><img src="./images/engine.png" className="img-fluid iconSize" alt="..."></img></td>
                                         <td><h3>{this.state.engineThrust} kN</h3></td>
                                     </tr>
                                 </tbody>
