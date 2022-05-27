@@ -1,28 +1,15 @@
 .launchCard {
-    background-color: #6c757d;
     max-width: 700px;
-    margin: auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border-radius: 0;
-
 }
 
-.LaunchPicture{
-    max-width: 100px;
-
+.rocket-name {
+    position: absolute;
+    top: 1;
 }
 
-.space-item-info h5 {
-    font-size: 16px;
-    color: rgb(160, 160, 160);
-    
-    
-}
-
-.space-item-info h4 {
-    font-size: 20px;
-    color: #fff;
+.launch-pad {
+    position: absolute;
+    top: 1;
 }
 
 .modalBackground {
