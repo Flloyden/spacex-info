@@ -7,9 +7,11 @@ import Rockets from './Components/Rockets/Rockets';
 import MyLaunches from './Components/MyLaunches/MyLaunches';
 import ScrollButton from './Components/ScrollButton/ScrollButton';
 
-
 function App() {
   const [mainFrame] = useState([
+    /**
+     * Declaring the different menu-choices
+     */
     {
       id: 1,
       title: "Home",
@@ -17,30 +19,30 @@ function App() {
     },
     {
       id: 2,
-      title: "Launches"
-      ,
+      title: "Launches",
       frame: <Launches />
     },
     {
       id: 3,
-      title: "Rockets"
-      ,
+      title: "Rockets",
       frame: <Rockets />
     },
     {
       id: 4,
-      title: "My Launches"
-      ,
+      title: "My Launches",
       frame: <MyLaunches />
-
     },
 
 
   ]);
-
+  
+  // declaring state variable
   const [frame, setFrame] = useState(<Mainframe />)
 
   function changeFrame(id) {
+    /**
+     * Chanching frame based on user choice
+     */
     setFrame(id)
   }
 
