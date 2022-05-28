@@ -24,3 +24,8 @@
     background-color: #8a8a8a7a;
     color: #000;
 }
+
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none;
+}

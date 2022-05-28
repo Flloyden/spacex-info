@@ -4,10 +4,9 @@ import './Navbar.css'
 export default function Navbar(props) {
 
   return (
-    <div className='w-25'>
-      <button className="btn bg-transparent test rounded border" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
-        <img className='img-fluid menu-rocket pl-1 pr-1' src='./images/rocket.gif' alt='Moving rocket from JoyPixels' />
-        <h6 className='text-light font'>MENU</h6>
+    <div className='nav-canvas'>
+      <button className="navbar-toggler navbar-dark bg-transparent p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon fs-1"></span>
       </button>
 
       <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">

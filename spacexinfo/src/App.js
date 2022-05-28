@@ -34,11 +34,11 @@ function App() {
       frame: <MyLaunches />
 
     },
-    
-      
-]);
 
-const [frame, setFrame] = useState(<Mainframe />)
+
+  ]);
+
+  const [frame, setFrame] = useState(<Mainframe />)
 
   function changeFrame(id) {
     setFrame(id)
@@ -47,18 +47,18 @@ const [frame, setFrame] = useState(<Mainframe />)
   return (
     <div className='content'>
       <div className='row container-fluid pt-4'>
-        <div className='col-3'>
+        <div className='col-3 p-0'>
           <Navbar items={mainFrame} changeFrame={changeFrame} />
         </div>
-        <div className='col-6 text-center pt-3'>
-          <img className='img-fluid img-max' src='./images/SpaceX-logo.png' alt='SpaceX logo' />
+        <div className='col-6 d-flex align-items-center text-center justify-content-center'>
+          <img className='img-fluid img-max mb-3' src='./images/SpaceX-logo.png' alt='SpaceX logo' />
         </div>
-        <div className='col-3'>
+        <div className='col-3 p-0'>
         </div>
-        <main className="container frame-content row m-auto">       
+        <main className="container frame-content row m-auto">
           {frame}
         </main>
-          <ScrollButton />
+        <ScrollButton />
       </div>
     </div>
   );
