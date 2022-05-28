@@ -19,16 +19,11 @@ export default function LaunchModal(props) {
                             <p className="card-text text-light">{rocket.description}</p>
                             <div className="col">
                                 <h6 className="text-light">Specs</h6>
-
-
                             </div>
                         </div>
                     </div>
-
                     <div className="modal-body">
-
                         <table className="table table-dark table-striped rounded">
-
                             <tbody>
                                 <tr>
                                     <th scope="row">ID:</th>
@@ -62,9 +57,6 @@ export default function LaunchModal(props) {
                                 </tr>
                             </tbody>
                         </table>
-
-
-
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>

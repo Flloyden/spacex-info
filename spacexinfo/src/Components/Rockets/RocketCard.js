@@ -24,17 +24,10 @@ export default class RocketCard extends Component {
             mass: "0",
             engineThrust: "0"
         }
-
-
-
     }
 
     chooseRocket = (e) => {
-        console.log(e)
-
         let thisRocket = this.props.rocketInfo[e.target.selectedIndex - 1]
-        //console.log(e.target.value)
-        console.log(this.props.rocketInfo[e.target.selectedIndex])
 
         this.setState({
             id: thisRocket.id,
@@ -56,31 +49,21 @@ export default class RocketCard extends Component {
             mass: thisRocket.mass.kg,
             engineThrust: thisRocket.engines.thrust_sea_level.kN
         });
-
-
     }
 
-
     render() {
-
         return (
             <div >
                 <div className="col-6 m-auto">
                     <select className="form-select col-6 m-auto" onChange={this.chooseRocket}>
                         <option>Select Rocket</option>
                         {this.props.rocketInfo.map(rocket =>
-
                             <option key={rocket.id} value={rocket.name}>
                                 {rocket.name}
                             </option>
-
-
                         )}
                     </select>
                 </div>
-
-
-
                 <div className="card col-lg-8 mb-3 rocket-card m-auto">
                     <img src={this.state.flickr_images} className="card-img-top" alt="..."></img>
                     <div className="card-body">
@@ -88,17 +71,14 @@ export default class RocketCard extends Component {
                         <p className="card-text text-light">{this.state.description}</p>
                         <div className="col">
                             <h6 className="text-light">Specs</h6>
-
                             <table className="table bg-light rounded">
                                 <thead>
                                     <tr>
-
                                         <th colSpan="3">Rocket Name: {this.state.name}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-
                                         <td>Height<h4>{this.state.height}m</h4></td>
                                         <td><img src="./images/startup.png" className="img-fluid rocketSize" alt="..."></img></td>
                                         <td></td>
@@ -114,9 +94,7 @@ export default class RocketCard extends Component {
                                     </tr>
                                 </tbody>
                             </table>
-
                             <table className="table table-dark table-striped rounded">
-
                                 <tbody>
                                     <tr>
                                         <th scope="row">ID:</th>
@@ -144,17 +122,10 @@ export default class RocketCard extends Component {
                                     </tr>
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
-
-
         )
-
     }
 }
