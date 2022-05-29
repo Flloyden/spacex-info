@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className='content'>
-      <div className='row container-fluid pt-4'>
+      <div className='row container-fluid pt-4 m-0'>
         <div className='col-3 p-0'>
           <Navbar items={mainFrame} changeFrame={changeFrame} />
         </div>
