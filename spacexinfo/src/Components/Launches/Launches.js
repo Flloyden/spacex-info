@@ -15,7 +15,7 @@ export default class Launches extends Component {
      */
   render() {
     return (
-      <div>
+      <div className='p-0'>
         <ApiConnector endpoint={'v4/launches'} />
       </div>
     )
