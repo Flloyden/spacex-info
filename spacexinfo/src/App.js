@@ -54,7 +54,7 @@ function App() {
           <Navbar items={mainFrame} changeFrame={changeFrame} />
         </div>
         <div className='col-12 d-flex align-items-center text-center justify-content-center'>
-          <img className='img-fluid img-max mb-3' src='./images/SpaceX-logo.png' alt='SpaceX logo' />
+          <a href={<Mainframe />}><img className='img-fluid img-max mb-3' src='./images/SpaceX-logo.png' alt='SpaceX logo' /></a>
         </div>
         
         <main className="container frame-content row m-auto p-0 pb-4">
