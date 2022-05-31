@@ -3,7 +3,7 @@ import './MyLaunches.css';
 
 export default function MyLaunches() {
   // declaring state variable
-  const [setMyList] = useState({})
+  const [MyList, setMyList] = useState({})
 
   function deleteLaunch(id) {
     /**
@@ -41,7 +41,9 @@ export default function MyLaunches() {
           // a launchcard is shown when added to the list of 'MyLaunches'
           <div className="card launchCard bg-secondary rounded m-auto mt-4" key={info.id}>
             <div className="card-body launchCard-body row">
-              <div className='left-side col-4 text-center'>
+
+
+              <div className='col-sm-4 mb-3 text-center'>
                 {info.links.patch.small ?
                 <img src={info.links.patch.small} className="w-100 pt-4" alt='spacex mission' />
                 :
@@ -52,17 +54,18 @@ export default function MyLaunches() {
                   <button type="button" className="btn btn-danger rounded-5" onClick={() => deleteLaunch(info.id)} >Delete</button>
                 </div>
               </div>
-              <div className='right-side col-8 d-flex flex-wrap align-items-start mb-3'>
-                <div className='space-item-info pt-4 w-50'>
+
+              <div className='col-sm-4 mb-3 text-center'>
+                <div className='pt-4'>
                   <h5 className="card-title text-dark fs-6 fw-bold">Flight</h5>
                   <h4 className="card-text text-white fs-5  text-white">{info.flight_number}</h4>
                 </div>
-                <div className='space-item-info pt-4 w-50'>
+                <div className='pt-4'>
                   <h5 className="card-title text-dark fs-6 fw-bold">Mission name</h5>
                   <h4 className="card-text text-white fs-5 text-white">{info.name}</h4>
                 </div>
 
-                <div className='space-item-info pt-4 w-50'>
+                <div className='pt-4'>
                   <h5 className="card-title text-dark fs-6 fw-bold">Status</h5>
                   {info.upcoming ?
                     <div className='upcoming'>
@@ -74,18 +77,19 @@ export default function MyLaunches() {
                     </div>
                   }
                 </div>
-
-                <div className='space-item-info pt-4 w-50'>
+                  </div>
+              <div className='col-sm-4 mb-3 text-center'>
+                <div className='pt-4'>
                   <h5 className="card-title text-dark fs-6 fw-bold">Time</h5>
                   <h4 className="card-text text-white fs-5">{new Date(info.date_local).toLocaleDateString("sv-SE")}</h4>
                 </div>
 
-                <div className='space-item-info pt-4 w-50'>
+                <div className='pt-4'>
                   <h5 className="card-title text-dark fs-6 fw-bold">Launchpad</h5>
                   <h4 className="card-text text-white">{info.launchpad}</h4>
                 </div>
 
-                <div className='space-item-info pt-4 w-50'>
+                <div className='pt-4'>
                   <h5 className="card-title text-dark fs-6 fw-bold">Rocket</h5>
                   <h4 className="card-text text-white">{info.rocket}</h4>
                 </div>

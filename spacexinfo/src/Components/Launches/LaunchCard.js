@@ -95,25 +95,29 @@ export default function LaunchCard(props) {
                         }
                         return (
                             <div className="card launchCard bg-secondary rounded m-auto mt-4" key={info.id}>
+
                                 <div className="card-body launchCard-body row">
-                                    <div className='left-side col-4 text-center'>
+
+                                    <div className='col-sm-4 text-center'>
                                         <img src={launchPatch} className="LaunchPicture pt-4 w-100" alt='SpaceX mission' />
                                         <div className="d-grid gap-2 pt-4 bottom-0 text-center pb-4">
                                             <button type="button" className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
                                             <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">Read more</button>
                                         </div>
                                     </div>
-                                    <div className='right-side col-8 d-flex flex-wrap align-items-start mb-3'>
-                                        <div className='space-item-info pt-4 w-50'>
+
+
+                                    <div className='col-sm-4 mb-3 text-center'>
+                                        <div className='pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Flight</h5>
                                             <h4 className="card-text text-white fs-5">{info.flight_number}</h4>
                                         </div>
-                                        <div className='space-item-info pt-4 w-50'>
+                                        <div className='pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Mission name</h5>
                                             <h4 className="card-text text-white fs-5">{info.name}</h4>
                                         </div>
 
-                                        <div className='space-item-info pt-4 w-50'>
+                                        <div className='pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Status</h5>
                                             {info.upcoming ?
                                                 <div className='upcoming'>
@@ -125,19 +129,23 @@ export default function LaunchCard(props) {
                                                 </div>
                                             }
                                         </div>
+                                    </div>
 
-                                        <div className='space-item-info pt-4 w-50'>
+
+                                    <div className='col-sm-4 mb-3 text-center'>
+
+                                        <div className='pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Time</h5>
                                             <h4 className="card-text text-white fs-5">{new Date(info.date_local).toLocaleDateString("sv-SE")}</h4>
                                         </div>
 
-                                        <div className='space-item-info pt-4 w-50'>
+                                        <div className='pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Launchpad</h5>
                                             {props.launchPad.map((test, index) => {
                                                 return (
-                                                    <div className='launch-pad' key={index}>
+                                                    <div className='launch-pad text-center' key={index}>
                                                         {info.launchpad === test.id ?
-                                                            <h4 className="card-text text-white fs-5">{test.name}</h4>
+                                                            <h4 className="card-text text-white fs-5 text-center">{test.name}</h4>
                                                             :
                                                             <p></p>
                                                         }
@@ -146,13 +154,13 @@ export default function LaunchCard(props) {
                                             })}
                                         </div>
 
-                                        <div className='space-item-info pt-4 w-50'>
+                                        <div className='pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Rocket</h5>
                                             {props.rocketName.map((details, index) => {
                                                 return (
                                                     <div className='rocket-name' key={index}>
                                                         {info.rocket === details.id ?
-                                                            <h4 className="card-text text-white fs-5">{details.name}</h4>
+                                                            <h4 className="card-text text-white fs-5 text-center">{details.name}</h4>
                                                             :
                                                             <p></p>
                                                         }
@@ -182,24 +190,28 @@ export default function LaunchCard(props) {
                         return (
                             <div className="card launchCard bg-secondary rounded m-auto mt-4" key={info.id}>
                                 <div className="card-body launchCard-body row">
-                                    <div className='left-side col-4 text-center'>
+
+
+                                    <div className='col-sm-4 mb-3 text-center'>
                                         <img src={launchPatch} className="LaunchPicture pt-4 w-100" alt='spacex mission' />
                                         <div className="d-grid gap-2 pt-4 bottom-0 text-center pb-4">
                                             <button type="button" className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
                                             <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">Read more</button>
                                         </div>
                                     </div>
-                                    <div className='right-side col-8 d-flex flex-wrap align-items-start mb-3'>
-                                        <div className='space-item-info pt-4 w-50'>
+
+
+                                    <div className='col-sm-4 mb-3 text-center'>
+                                        <div className='space-item-info pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Flight</h5>
                                             <h4 className="card-text text-white fs-5">{info.flight_number}</h4>
                                         </div>
-                                        <div className='space-item-info pt-4 w-50'>
+                                        <div className='space-item-info pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Mission name</h5>
                                             <h4 className="card-text text-white fs-5">{info.name}</h4>
                                         </div>
 
-                                        <div className='space-item-info pt-4 w-50'>
+                                        <div className='space-item-info pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Status</h5>
                                             {info.upcoming ?
                                                 <div className='upcoming'>
@@ -211,13 +223,14 @@ export default function LaunchCard(props) {
                                                 </div>
                                             }
                                         </div>
-
-                                        <div className='space-item-info pt-4 w-50'>
+                                            </div>
+                                    <div className='col-sm-4 mb-3 text-center'>
+                                        <div className='space-item-info pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Time</h5>
                                             <h4 className="card-text text-white fs-5">{new Date(info.date_local).toLocaleDateString("sv-SE")}</h4>
                                         </div>
 
-                                        <div className='space-item-info pt-4 w-50'>
+                                        <div className='space-item-info pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Launchpad</h5>
                                             {props.launchPad.map((test, index) => {
                                                 return (
@@ -232,7 +245,7 @@ export default function LaunchCard(props) {
                                             })}
                                         </div>
 
-                                        <div className='space-item-info pt-4 w-50'>
+                                        <div className='space-item-info pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Rocket</h5>
                                             {props.rocketName.map((details, index) => {
                                                 return (
