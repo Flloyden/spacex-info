@@ -4,7 +4,6 @@ import LaunchModal from '../LaunchModal/LaunchModal'
 
 export default function LaunchCard(props) {
     // declaring state variable
-
     let pad;
     const [list, setList] = useState([])
     const [thisRocket, setThisRocket] = useState({
@@ -58,24 +57,55 @@ export default function LaunchCard(props) {
         /**
          * Adds a launchcard to localstorage
          */
+
+        let saveThis = props.launchInfo.filter((item) => item.id === e)
+      
         if (localStorage.getItem("addedLaunchCard") === null) {
             let myNewLaunchList = {}
-            myNewLaunchList[props.launchInfo[e.target.id].id] = props.launchInfo[e.target.id]
+            myNewLaunchList[saveThis[0].id] = saveThis
             localStorage.setItem("addedLaunchCard", JSON.stringify(myNewLaunchList));
         }
         else {
             let saveMyLaunchList = JSON.parse(localStorage.getItem("addedLaunchCard"));
-            if (props.launchInfo[e.target.id].id in saveMyLaunchList) {
+            if (saveThis[0].id in saveMyLaunchList) {
                 // Already saved to list
             } else {
-                saveMyLaunchList[props.launchInfo[e.target.id].id] = props.launchInfo[e.target.id]
+                saveMyLaunchList[saveThis[0].id] = saveThis
                 localStorage.setItem("addedLaunchCard", JSON.stringify(saveMyLaunchList));
             }
         }
 
-        console.log(e.target.id)
+        let added = document.getElementById(`addThis${e}`)
+        added.innerHTML = 'Added'
+        added.style.color = 'white'
+        added.parentElement.style.backgroundColor = "red";
 
     }
+
+
+    useEffect(() => {
+        
+        try {
+            let myList = localStorage.getItem("addedLaunchCard")
+            let myObjects = JSON.parse(myList)
+
+            Object.values(myObjects).map((info, i) => {
+
+                try {
+                    let added = document.getElementById(`addThis${info[0].id}`)
+                    added.innerHTML = 'Added'
+                    added.style.color = 'white'
+                    added.parentElement.style.backgroundColor = "red";
+                } catch (error) {
+
+                }
+
+            })
+        } catch (error) {
+
+        }
+        
+    });
 
     return (
         <div>
@@ -90,7 +120,6 @@ export default function LaunchCard(props) {
             start-page is set to upcoming launches by default
         */}
             {JSON.stringify(list) !== '[]' ?
-
                 <>
                     {list.map((info, index) => {
 
@@ -122,7 +151,7 @@ export default function LaunchCard(props) {
                                     <div className='col-sm-4 text-center'>
                                         <img src={launchPatch} className="LaunchPicture pt-4 w-100" alt='SpaceX mission' />
                                         <div className="d-grid gap-2 pt-4 bottom-0 text-center pb-4">
-                                            <button type="button" className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
+                                            <button type="button" className="btn btn-info" onClick={() => addToLocalStorage(info.id)}><span id={"addThis"+info.id}>Add to "My Launches"</span></button>
                                             <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">Read more</button>
                                         </div>
                                     </div>
@@ -175,6 +204,7 @@ export default function LaunchCard(props) {
 
                         )
                     })}
+                    
                 </>
 
                 // else, showing the sorted list based on the sort function
@@ -208,7 +238,7 @@ export default function LaunchCard(props) {
                                     <div className='col-sm-4 mb-3 text-center'>
                                         <img src={launchPatch} className="LaunchPicture pt-4 w-100" alt='spacex mission' />
                                         <div className="d-grid gap-2 pt-4 bottom-0 text-center pb-4">
-                                            <button type="button" className="btn btn-info" id={index} onClick={addToLocalStorage}>Add to "My Launches"</button>
+                                            <button type="button" className="btn btn-info" onClick={() => addToLocalStorage(info.id)}><span id={"addThis" + info.id}>Add to "My Launches"</span></button>
                                             <button type="button" className="btn btn-primary" id={index} onClick={sendData} data-bs-toggle="modal" data-bs-target="#exampleModal">Read more</button>
                                         </div>
                                     </div>
