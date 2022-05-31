@@ -74,7 +74,11 @@ export default function LaunchCard(props) {
                 localStorage.setItem("addedLaunchCard", JSON.stringify(saveMyLaunchList));
             }
         }
-
+        
+         /**
+         * when launchCard is added to "My Launchcard",
+         * change the text color and background color of button 
+         */
         let added = document.getElementById(`addThis${e}`)
         added.innerHTML = 'Added'
         added.style.color = 'white'
@@ -96,6 +100,10 @@ export default function LaunchCard(props) {
                     added.innerHTML = 'Added'
                     added.style.color = 'white'
                     added.parentElement.style.backgroundColor = "red";
+                     /**
+                     * when launchCard is added to "My Launchcard",
+                     * change the text color and background color of button 
+                     */
                 } catch (error) {
 
                 }
