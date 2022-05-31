@@ -21,7 +21,7 @@ export default function LaunchModal(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="modal-body">
+                <div className="modal-body table-responsive">
                         <table className="table table-dark table-striped rounded">
                             <tbody>
                                 <tr>
@@ -33,26 +33,22 @@ export default function LaunchModal(props) {
                                     <td>{rocket.type}</td></tr>
                                 <tr>
                                     <th scope="row">Boosters:</th>
-                                    <td>{rocket.boosters}</td>
+                                    <td>{rocket.boosters} pcs</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Company</th>
                                     <td>{rocket.company}</td></tr>
                                 <tr>
                                     <th scope="row">Cost per launch:</th>
-                                    <td>{rocket.cost_per_launch}</td>
+                                    <td>$ {rocket.cost_per_launch}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Success rate</th>
-                                    <td>{rocket.success_rate_pct}</td>
+                                    <td>{rocket.success_rate_pct}%</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Read more:</th>
                                     <td><a href={rocket.wikipedia}>Wikipedia</a></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Success rate</th>
-                                    <td>{rocket.success_rate_pct}</td>
                                 </tr>
                             </tbody>
                         </table>

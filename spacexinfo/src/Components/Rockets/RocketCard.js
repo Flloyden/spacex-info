@@ -78,8 +78,8 @@ export default class RocketCard extends Component {
                     <div className="modal-dialog modal-lg">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title">Modal title</h5>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h5 className="modal-title text-light">{this.state.name}</h5>
+                                <button type="button" className="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
                                 <div className="card col mb-3 rocket-card m-auto">
@@ -122,21 +122,19 @@ export default class RocketCard extends Component {
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Boosters:</th>
-                                                        <td>{this.state.boosters}</td>
+                                                        <td>{this.state.boosters} pcs</td>
                                                         <th scope="row">Company</th>
                                                         <td>{this.state.company}</td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Cost per launch:</th>
-                                                        <td>{this.state.cost_per_launch}</td>
+                                                        <td>$ {this.state.cost_per_launch}</td>
                                                         <th scope="row">Success rate</th>
-                                                        <td>{this.state.success_rate_pct}</td>
+                                                        <td>{this.state.success_rate_pct} %</td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Read more:</th>
                                                         <td><a href={this.state.wikipedia}>Wikipedia</a></td>
-                                                        <th scope="row">Success rate</th>
-                                                        <td>{this.state.success_rate_pct}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>

@@ -53,8 +53,8 @@ function App() {
         <div className='position-fixed col-3 p-0 nav-div'>
           <Navbar items={mainFrame} changeFrame={changeFrame} />
         </div>
-        <div className='col-12 d-flex align-items-center text-center justify-content-center'>
-          <a href={<Mainframe />}><img className='img-fluid img-max mb-3' src='./images/SpaceX-logo.png' alt='SpaceX logo' /></a>
+        <div className='col-12 d-flex align-items-center text-center justify-content-center m-auto'>
+          <img className='img-fluid img-max mb-3' onClick={() => setFrame(<Mainframe />)} src='./images/SpaceX-logo.png' alt='SpaceX logo' />
         </div>
         
         <main className="container frame-content row m-auto p-0 pb-4">
