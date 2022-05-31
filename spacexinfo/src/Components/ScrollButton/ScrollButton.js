@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaArrowCircleUp } from 'react-icons/fa';
+/* This is a package with icons from react */
 
 const ScrollButton = () => {
   /**
@@ -8,11 +9,12 @@ const ScrollButton = () => {
 
   const scrollToTop = () => {
     /**
-   * Scrolling to top on click
+   * Scrolling to top when scrollbutton is clicked
    */
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
+      /* This is the behavior of the scroll button */
     });
   };
 
