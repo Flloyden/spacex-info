@@ -69,7 +69,6 @@ export default function MyLaunches() {
                     <img src="https://imgur.com/IJWn9pK.png" className="w-100 pt-4" alt='spacex mission' />
                   }
                   <div className="d-grid gap-2 pt-4 bottom-0 text-center pb-4">
-                    <button type="button" className="btn btn-primary rounded-5">Read more</button>
                     <button type="button" className="btn btn-danger rounded-5" onClick={() => deleteLaunch(info[0].id)} >Delete</button>
                   </div>
                 </div>
@@ -88,11 +87,11 @@ export default function MyLaunches() {
                     <h5 className="card-title text-dark fs-6 fw-bold">Status</h5>
                     {info[0].upcoming ?
                       <div className='upcoming'>
-                        <h4 className="card-text fs-5 text-warning"><span className="badge bg-success">Upcoming</span></h4>
+                        <h4 className="card-text fs-5"><span className="badge bg-warning">Upcoming</span></h4>
                       </div>
                       :
                       <div className='completed'>
-                        <h4 className="card-text fs-5 text-success"><span className="badge bg-warning">Completed</span></h4>
+                        <h4 className="card-text fs-5"><span className="badge bg-success">Completed</span></h4>
                       </div>
                     }
                   </div>
