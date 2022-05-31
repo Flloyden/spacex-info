@@ -5,10 +5,11 @@ export default function MyLaunches() {
   // declaring state variable
   const [MyList, setMyList] = useState({})
   let pad;
+  /* 'pad' is the defintion of launchpad */
 
   function deleteLaunch(id) {
     /**
-     * A function for deleting launch from 'MyLaunch' and from localstorage
+     * A function for deleting launchcard from 'MyLaunch' and also from localstorage
      */
     // We find the launchcard from localstorage
     let delObject = localStorage.getItem("addedLaunchCard");
