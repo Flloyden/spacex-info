@@ -266,7 +266,7 @@ export default function LaunchCard(props) {
                     })}
                 </>
             }
-            <div className="modal fade" id="exampleModal" tabIndex="-1">
+            <div className="modal" id="exampleModal">
                 <LaunchModal launch={thisRocket} />
             </div>
         </div>
