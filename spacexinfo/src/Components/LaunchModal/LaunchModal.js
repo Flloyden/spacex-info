@@ -5,7 +5,6 @@ export default function LaunchModal(props) {
     const rocket = JSON.parse(rock);
 
     return (
-        <div>
             <div className="modal-dialog modal-lg">
                 <div className="modal-content modalBackground">
                     <div className="modal-header">
@@ -63,6 +62,5 @@ export default function LaunchModal(props) {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }

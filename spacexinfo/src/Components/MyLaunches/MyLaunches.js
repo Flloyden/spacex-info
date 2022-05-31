@@ -62,7 +62,7 @@ export default function MyLaunches() {
               <div className="card-body launchCard-body row">
 
 
-                <div className='col-sm-4 mb-3 text-center'>
+                <div className='col-sm-4  text-center'>
                   {info[0].links.patch.small ?
                     <img src={info[0].links.patch.small} className="w-100 pt-4" alt='spacex mission' />
                     :
@@ -74,7 +74,7 @@ export default function MyLaunches() {
                   </div>
                 </div>
 
-                <div className='col-sm-4 mb-3 text-center'>
+                <div className='col-sm-4  text-center'>
                   <div className='pt-4'>
                     <h5 className="card-title text-dark fs-6 fw-bold">Flight</h5>
                     <h4 className="card-text text-white fs-5  text-white">{info[0].flight_number}</h4>
@@ -97,7 +97,7 @@ export default function MyLaunches() {
                     }
                   </div>
                 </div>
-                <div className='col-sm-4 mb-3 text-center'>
+                <div className='col-sm-4  text-center'>
                   <div className='pt-4'>
                     <h5 className="card-title text-dark fs-6 fw-bold">Time</h5>
                     <h4 className="card-text text-white fs-5">{new Date(info[0].date_local).toLocaleDateString("sv-SE")}</h4>

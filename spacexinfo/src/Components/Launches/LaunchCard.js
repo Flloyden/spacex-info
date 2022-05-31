@@ -165,7 +165,7 @@ export default function LaunchCard(props) {
                                     </div>
 
 
-                                    <div className='col-sm-4 mb-3 text-center'>
+                                    <div className='col-sm-4  text-center'>
                                         <div className='pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Flight</h5>
                                             <h4 className="card-text text-white fs-5">{info.flight_number}</h4>
@@ -190,7 +190,7 @@ export default function LaunchCard(props) {
                                     </div>
 
 
-                                    <div className='col-sm-4 mb-3 text-center'>
+                                    <div className='col-sm-4  text-center'>
                                         <div className='pt-4'>
                                             <h5 className="card-title text-dark fs-6 fw-bold">Time</h5>
                                             <h4 className="card-text text-white fs-5">{new Date(info.date_local).toLocaleDateString("sv-SE")}</h4>
@@ -243,7 +243,7 @@ export default function LaunchCard(props) {
                                 <div className="card-body launchCard-body row">
 
 
-                                    <div className='col-sm-4 mb-3 text-center'>
+                                    <div className='col-sm-4  text-center'>
                                         <img src={launchPatch} className="LaunchPicture pt-4 w-100" alt='spacex mission' />
                                         <div className="d-grid gap-2 pt-4 bottom-0 text-center pb-4">
                                             <button type="button" className="btn btn-info" onClick={() => addToLocalStorage(info.id)}><span id={"addThis" + info.id}>Add to "My Launches"</span></button>
@@ -252,7 +252,7 @@ export default function LaunchCard(props) {
                                     </div>
 
 
-                                    <div className='col-sm-4 mb-3 text-center'>
+                                    <div className='col-sm-4  text-center'>
                                         <div className='space-item-info pt-4'>
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Flight</h5>
                                             <h4 className="card-text text-white fs-5">{info.flight_number}</h4>
@@ -275,7 +275,7 @@ export default function LaunchCard(props) {
                                             }
                                         </div>
                                     </div>
-                                    <div className='col-sm-4 mb-3 text-center'>
+                                    <div className='col-sm-4  text-center'>
                                         <div className='pt-4'>
                                             <h5 className="card-title text-dark fs-6 fw-bold">Time</h5>
                                             <h4 className="card-text text-white fs-5">{new Date(info.date_local).toLocaleDateString("sv-SE")}</h4>
