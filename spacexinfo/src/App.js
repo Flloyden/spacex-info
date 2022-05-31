@@ -36,10 +36,6 @@ function App() {
 
   ]);
 
-  const [showA, setShowA] = useState('toast hide');
-
-  const toggleShowA = () => setShowA('toast show');
-
   
   // declaring state variable
   const [frame, setFrame] = useState(<Mainframe />)
@@ -65,26 +61,6 @@ function App() {
           {frame}
         </main>
         <ScrollButton />
-
-        
-        <div className="mb-2">
-          <button onClick={toggleShowA} className="mb-2">
-            Toggle Toast <strong>with</strong> Animation
-          </button>
-          <div className={showA} data-bs-autohide="false"
-            data-bs-delay="3000" onClose={toggleShowA}>
-            <div>
-              <img
-                src="holder.js/20x20?text=%20"
-                className="rounded me-2"
-                alt=""
-              />
-              <strong className="me-auto">Bootstrap</strong>
-              <small>11 mins ago</small>
-            </div>
-            <div>Woohoo, you're reading this text in a Toast!</div>
-          </div>
-        </div>
       </div>
     </div>
   );
