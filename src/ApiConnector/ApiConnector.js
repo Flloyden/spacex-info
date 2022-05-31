@@ -26,7 +26,7 @@ export default function ApiConnector(props) {
             })
 
         // empty dependency array means this effect will only run once (like componentDidMount in classes)
-    }, []);
+    }, [props.endpoint]);
 
     // Checking the endpoint and returning the correct data from the API-call
     if (props.endpoint === "v4/launches") {

@@ -63,7 +63,7 @@ export default class RocketCard extends Component {
                     <div className="col-md-6 m-auto mt-3" key={index+"rocket"}>
                             <a className="position-relative rocketInfo" onClick={() => this.chooseRocket(rocket.id)} data-bs-toggle="modal" href="#exampleModal" role="button" aria-expanded="false" aria-controls="exampleModal">
                                 
-                                <img className="img-fluid menu-image rounded" key={rocket.id} src={rocket.flickr_images}></img>
+                                <img className="img-fluid menu-image rounded" key={rocket.id} src={rocket.flickr_images} alt="rocket"></img>
                                 <div className="overlay">
                                     <div className="text-light text-center">Read more</div>
                                     <p className="text-decoration-none text-dark text-center"><strong>{rocket.name}</strong></p>

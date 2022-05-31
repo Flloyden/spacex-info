@@ -3,15 +3,8 @@ import ApiConnector from '../../ApiConnector/ApiConnector';
 import Rockets from '../Rockets/Rockets';
 
 export default class Mainframe extends Component {
-  constructor(props) {
-    super(props);
-   
-  }
 
   render() {
-    
-      
-    
       return (
         <div className='launch-info text-center text-white d-flex justify-content-center'>
           <Rockets />
@@ -21,6 +14,4 @@ export default class Mainframe extends Component {
        
       )
     }
-
   }
-
