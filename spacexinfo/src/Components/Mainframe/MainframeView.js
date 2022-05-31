@@ -11,12 +11,12 @@ export default function MainframeView(props) {
   let diff = launchMill - todayMill;
 
   return (
-    <div className='launch-info text-center text-white d-flex justify-content-center'>
+    
       <div className='align-self-end launch-text'>
         <h1>Next Launch: {props.nextLaunch.name}</h1>
         <h2><Countdown key={Date.now()} date={Date.now() + diff} /></h2>
         <h6>DD : HH : MM : SS</h6>
       </div>
-    </div>
+    
   )
 }

@@ -9,15 +9,25 @@ export default class Rockets extends Component {
         }
     }
 
+    
+
     /**
      * endpoints can be = all, one, query, schema. docs -> https://github.com/r-spacex/SpaceX-API/tree/master/docs/rockets/v4
      *  Rockets sends endpoint to ApiConnector2
      */
     render() {
-        return (
-            <div>
+        if (this.props.render) {
+            return (
+                <ApiConnector endpoint={'v4/rockets'} render={'renderRocket'}/>
+               
+            )
+        } else {
+            return (
+               
                 <ApiConnector endpoint={'v4/rockets'} />
-            </div>
-        )
+                
+            )
+        }
+        
     }
 }

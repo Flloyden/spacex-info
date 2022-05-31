@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './LaunchCard.css'
 import LaunchModal from '../LaunchModal/LaunchModal'
 
 export default function LaunchCard(props) {
     // declaring state variable
+
+    let pad;
     const [list, setList] = useState([])
     const [thisRocket, setThisRocket] = useState({
         name: '',
@@ -70,6 +72,9 @@ export default function LaunchCard(props) {
                 localStorage.setItem("addedLaunchCard", JSON.stringify(saveMyLaunchList));
             }
         }
+
+        console.log(e.target.id)
+
     }
 
     return (
@@ -85,8 +90,24 @@ export default function LaunchCard(props) {
             start-page is set to upcoming launches by default
         */}
             {JSON.stringify(list) !== '[]' ?
+
                 <>
                     {list.map((info, index) => {
+
+                        let rocketId = localStorage.getItem(info.rocket);
+                        let rocketObject = (JSON.parse(rocketId));
+
+                        let allLaunchPads = localStorage.getItem('launchpads');
+                        let launchPadObjects = (JSON.parse(allLaunchPads));
+
+
+                        launchPadObjects.map((launchPad, index) => {
+                            if (info.launchpad === launchPad.id) {
+                                return (pad = launchPad.name)
+                            }
+                            })
+
+
                         let launchPatch;
                         if (info.links.patch.small === null) {
                             launchPatch = "https://imgur.com/IJWn9pK.png"
@@ -121,11 +142,11 @@ export default function LaunchCard(props) {
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Status</h5>
                                             {info.upcoming ?
                                                 <div className='upcoming'>
-                                                    <h4 className="card-text fs-5 text-warning">Upcoming</h4>
+                                                    <h4 className="card-text fs-5 text-warning"><span className="badge bg-warning">Upcoming</span></h4>
                                                 </div>
                                                 :
                                                 <div className='completed'>
-                                                    <h4 className="card-text fs-5 text-success">Completed</h4>
+                                                    <h4 className="card-text fs-5 text-success"><span className="badge bg-success">Completed</span></h4>
                                                 </div>
                                             }
                                         </div>
@@ -133,40 +154,19 @@ export default function LaunchCard(props) {
 
 
                                     <div className='col-sm-4 mb-3 text-center'>
-
                                         <div className='pt-4'>
-                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Time</h5>
+                                            <h5 className="card-title text-dark fs-6 fw-bold">Time</h5>
                                             <h4 className="card-text text-white fs-5">{new Date(info.date_local).toLocaleDateString("sv-SE")}</h4>
                                         </div>
 
                                         <div className='pt-4'>
-                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Launchpad</h5>
-                                            {props.launchPad.map((test, index) => {
-                                                return (
-                                                    <div className='launch-pad text-center' key={index}>
-                                                        {info.launchpad === test.id ?
-                                                            <h4 className="card-text text-white fs-5 text-center">{test.name}</h4>
-                                                            :
-                                                            <p></p>
-                                                        }
-                                                    </div>
-                                                )
-                                            })}
+                                            <h5 className="card-title text-dark fs-6 fw-bold">Launchpad</h5>
+                                            <h4 className="card-text text-white fs-5">{pad}</h4>
                                         </div>
 
                                         <div className='pt-4'>
-                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Rocket</h5>
-                                            {props.rocketName.map((details, index) => {
-                                                return (
-                                                    <div className='rocket-name' key={index}>
-                                                        {info.rocket === details.id ?
-                                                            <h4 className="card-text text-white fs-5 text-center">{details.name}</h4>
-                                                            :
-                                                            <p></p>
-                                                        }
-                                                    </div>
-                                                )
-                                            })}
+                                            <h5 className="card-title text-dark fs-6 fw-bold">Rocket</h5>
+                                            <h4 className="card-text text-white fs-5">{rocketObject.name}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +181,20 @@ export default function LaunchCard(props) {
                 :
                 <>
                     {props.launchInfo.map((info, index) => {
+                        let rocketId = localStorage.getItem(info.rocket);
+                        let rocketObject = (JSON.parse(rocketId));
                         let launchPatch;
+
+                        let allLaunchPads = localStorage.getItem('launchpads');
+                        let launchPadObjects = (JSON.parse(allLaunchPads));
+
+
+                        launchPadObjects.map((launchPad, index) => {
+                            if (info.launchpad === launchPad.id) {
+                                return (pad = launchPad.name)
+                            }
+                        })
+
                         if (info.links.patch.small === null) {
                             launchPatch = "https://imgur.com/IJWn9pK.png"
                         } else {
@@ -215,49 +228,29 @@ export default function LaunchCard(props) {
                                             <h5 className="card-title text-black-25 fs-6 fw-bold">Status</h5>
                                             {info.upcoming ?
                                                 <div className='upcoming'>
-                                                    <h4 className="card-text fs-5 text-warning">Upcoming</h4>
+                                                    <h4 className="card-text fs-5 text-warning"><span className="badge bg-warning">Upcoming</span></h4>
                                                 </div>
                                                 :
                                                 <div className='completed'>
-                                                    <h4 className="card-text fs-5 text-success">Completed</h4>
+                                                    <h4 className="card-text fs-5 text-success"><span className="badge bg-success">Completed</span></h4>
                                                 </div>
                                             }
                                         </div>
-                                            </div>
+                                    </div>
                                     <div className='col-sm-4 mb-3 text-center'>
-                                        <div className='space-item-info pt-4'>
-                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Time</h5>
+                                        <div className='pt-4'>
+                                            <h5 className="card-title text-dark fs-6 fw-bold">Time</h5>
                                             <h4 className="card-text text-white fs-5">{new Date(info.date_local).toLocaleDateString("sv-SE")}</h4>
                                         </div>
 
-                                        <div className='space-item-info pt-4'>
-                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Launchpad</h5>
-                                            {props.launchPad.map((test, index) => {
-                                                return (
-                                                    <div className='launch-pad' key={index}>
-                                                        {info.launchpad === test.id ?
-                                                            <h4 className="card-text text-white fs-5">{test.name}</h4>
-                                                            :
-                                                            <p></p>
-                                                        }
-                                                    </div>
-                                                )
-                                            })}
+                                        <div className='pt-4'>
+                                            <h5 className="card-title text-dark fs-6 fw-bold">Launchpad</h5>
+                                            <h4 className="card-text text-white fs-5">{pad}</h4>
                                         </div>
 
-                                        <div className='space-item-info pt-4'>
-                                            <h5 className="card-title text-black-25 fs-6 fw-bold">Rocket</h5>
-                                            {props.rocketName.map((details, index) => {
-                                                return (
-                                                    <div className='rocket-name' key={index}>
-                                                        {info.rocket === details.id ?
-                                                            <h4 className="card-text text-white fs-5">{details.name}</h4>
-                                                            :
-                                                            <p></p>
-                                                        }
-                                                    </div>
-                                                )
-                                            })}
+                                        <div className='pt-4'>
+                                            <h5 className="card-title text-dark fs-6 fw-bold">Rocket</h5>
+                                            <h4 className="card-text text-white fs-5">{rocketObject.name}</h4>
                                         </div>
                                     </div>
                                 </div>

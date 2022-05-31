@@ -15,8 +15,12 @@
 
 .img-max {
   max-width: 300px;
-
 }
+
+.nav-div {
+  z-index: 999;
+}
+
 
 .App-header {
   background-color: #282c34;
