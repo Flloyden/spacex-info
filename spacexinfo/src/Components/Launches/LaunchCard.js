@@ -47,6 +47,7 @@ export default function LaunchCard(props) {
                     )
                 }
             })
+            array.reverse()
             setList(array)
         }
     }

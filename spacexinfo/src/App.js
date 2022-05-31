@@ -57,7 +57,7 @@ function App() {
         </div>
         <div className='col-3 p-0'>
         </div>
-        <main className="container frame-content row m-auto p-0">
+        <main className="container frame-content row m-auto p-0 pb-4">
           {frame}
         </main>
         <ScrollButton />
