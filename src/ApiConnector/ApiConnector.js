@@ -30,8 +30,9 @@ export default function ApiConnector(props) {
 
     // Checking the endpoint and returning the correct data from the API-call
     if (props.endpoint === "v4/launches") {
-        return (<LaunchCard launchInfo={SpaceXResponse} /*rocketName={SpaceXRockets} launchPad={launchPadInfo} */ />)
+        return (<LaunchCard launchInfo={SpaceXResponse} />)
     } else if (props.endpoint === "v4/rockets") {
+        // Adds information about rockets to localstorage and saves it
         for (let i = 0; i < SpaceXResponse.length; i++) {
             localStorage.setItem(SpaceXResponse[i].id, JSON.stringify(SpaceXResponse[i]));
         }
@@ -40,7 +41,6 @@ export default function ApiConnector(props) {
         } else {
 
         }
-        
     } else if (props.endpoint === 'v5/launches/next') {
         return (<MainframeView nextLaunch={SpaceXResponse} />)
     } else if (props.endpoint === 'v4/launchpads') {

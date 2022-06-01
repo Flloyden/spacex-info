@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function LaunchModal(props) {
+    // Gets information from localstorage
     const rock = localStorage.getItem(props.launch.rocket);
     const rocket = JSON.parse(rock);
 
