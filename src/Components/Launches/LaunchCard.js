@@ -4,13 +4,15 @@ import LaunchModal from '../LaunchModal/LaunchModal'
 
 export default function LaunchCard(props) {
     // declaring state variable
-    let pad;
     const [list, setList] = useState([])
     const [thisRocket, setThisRocket] = useState({
         name: '',
         rocket: "5e9d0d95eda69973a809d1ec",
         flight_number: ""
     })
+
+    // Variable to save the name about a launchpad
+    let pad;
 
     function sendData(e) {
         /**
@@ -33,62 +35,69 @@ export default function LaunchCard(props) {
             props.launchInfo.map((info) => {
                 // check the state of launches
                 if (info.upcoming === false) {
-                    return (
-                        array.push(info)
-                    )
+                    array.push(info)
                 }
+                return (null)
             })
+            // Setting the list
             setList(array)
+
         } else if (param === "Upcoming") {
             props.launchInfo.map((info) => {
                 // check the state of launches
                 if (info.upcoming === true) {
-                    return (
-                        array.push(info)
-                    )
+                    array.push(info)
                 }
+                return (null)
             })
+            // Reversing the array and sets the list
             array.reverse()
             setList(array)
         }
     }
 
-    function addToLocalStorage(e) {
+    function addToLocalStorage(thisLaunchId) {
         /**
          * Adds a launchcard to localstorage
          */
 
-        let saveThis = props.launchInfo.filter((item) => item.id === e)
+        // Checks the list and get the object with right id from button
+        let saveThis = props.launchInfo.filter((item) => item.id === thisLaunchId)
       
+        // Creates a new object if addedLaunchCard does not exist in localstorage
         if (localStorage.getItem("addedLaunchCard") === null) {
             let myNewLaunchList = {}
             myNewLaunchList[saveThis[0].id] = saveThis
             localStorage.setItem("addedLaunchCard", JSON.stringify(myNewLaunchList));
         }
+        // If object exist in localstorage it does nothing
         else {
             let saveMyLaunchList = JSON.parse(localStorage.getItem("addedLaunchCard"));
+            // Already saved to list
             if (saveThis[0].id in saveMyLaunchList) {
-                // Already saved to list
             } else {
+                // Adds object to list in localstorage
                 saveMyLaunchList[saveThis[0].id] = saveThis
                 localStorage.setItem("addedLaunchCard", JSON.stringify(saveMyLaunchList));
             }
         }
-        
+
          /**
          * when launchCard is added to "My Launchcard",
          * change the text color and background color of button 
          */
-        let added = document.getElementById(`addThis${e}`)
+        let added = document.getElementById(`addThis${thisLaunchId}`)
         added.innerHTML = 'Added'
         added.style.color = 'white'
         added.parentElement.style.backgroundColor = "red";
-
     }
 
 
     useEffect(() => {
-        
+        /**
+         * Checks if the card exist in localstorage list and makes the "Add to my list" button red
+         * Testing to add if html is loaded else it caches the error
+         */
         try {
             let myList = localStorage.getItem("addedLaunchCard")
             let myObjects = JSON.parse(myList)
@@ -107,6 +116,8 @@ export default function LaunchCard(props) {
                 } catch (error) {
 
                 }
+
+                return (null)
 
             })
         } catch (error) {
@@ -131,20 +142,23 @@ export default function LaunchCard(props) {
                 <>
                     {list.map((info, index) => {
 
+                        // gets the information about a rocket from localstorage
                         let rocketId = localStorage.getItem(info.rocket);
                         let rocketObject = (JSON.parse(rocketId));
 
+                        // gets the information about a launchpad from localstorage
                         let allLaunchPads = localStorage.getItem('launchpads');
                         let launchPadObjects = (JSON.parse(allLaunchPads));
 
-
+                        // Maps launchpad from api-call against localstorage and returns the name instead of id
                         launchPadObjects.map((launchPad, index) => {
                             if (info.launchpad === launchPad.id) {
-                                return (pad = launchPad.name)
+                                pad = launchPad.name
                             }
+                            return (null)
                             })
 
-
+                        // Checks if the image is null and replace it with a default image
                         let launchPatch;
                         if (info.links.patch.small === null) {
                             launchPatch = "https://imgur.com/IJWn9pK.png"
@@ -219,20 +233,24 @@ export default function LaunchCard(props) {
                 :
                 <>
                     {props.launchInfo.map((info, index) => {
+                        // gets the information about a rocket from localstorage
                         let rocketId = localStorage.getItem(info.rocket);
                         let rocketObject = (JSON.parse(rocketId));
-                        let launchPatch;
 
+                        // gets the information about a launchpad from localstorage
                         let allLaunchPads = localStorage.getItem('launchpads');
                         let launchPadObjects = (JSON.parse(allLaunchPads));
 
-
+                        // Maps launchpad from api-call against localstorage and returns the name instead of id
                         launchPadObjects.map((launchPad, index) => {
                             if (info.launchpad === launchPad.id) {
-                                return (pad = launchPad.name)
+                                pad = launchPad.name
                             }
+                            return (null)
                         })
 
+                        // Checks if the image is null and replace it with a default image
+                        let launchPatch;
                         if (info.links.patch.small === null) {
                             launchPatch = "https://imgur.com/IJWn9pK.png"
                         } else {

@@ -11,7 +11,6 @@ export default class Mainframe extends Component {
           <ApiConnector endpoint={'v4/launchpads'} />
           <ApiConnector endpoint={'v5/launches/next'} />
         </div>
-       
       )
     }
   }

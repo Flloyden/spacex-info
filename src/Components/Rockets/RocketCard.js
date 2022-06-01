@@ -26,9 +26,10 @@ export default class RocketCard extends Component {
         }
     }
 
-    chooseRocket = (e) => {
+    chooseRocket = (rocketId) => {
     
-        let thisRocket = this.props.rocketInfo.filter((item) => item.id === e)
+        // Filter the rockets and setting state for modal
+        let thisRocket = this.props.rocketInfo.filter((item) => item.id === rocketId)
 
         this.setState({
             id: thisRocket[0].id,
@@ -55,7 +56,6 @@ export default class RocketCard extends Component {
     render() {
         return (
             <div >
-
 
                 <div className="container row m-auto mt-5">
                     {this.props.rocketInfo.map((rocket, index) =>

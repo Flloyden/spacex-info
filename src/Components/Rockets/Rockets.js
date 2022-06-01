@@ -16,12 +16,14 @@ export default class Rockets extends Component {
      *  Rockets sends endpoint to ApiConnector2
      */
     render() {
+        // Returns no visual display if render exist, and saves information to localstorage
         if (this.props.render) {
             return (
                 <ApiConnector endpoint={'v4/rockets'} render={'renderRocket'}/>
                
             )
         } else {
+            // Returns normal
             return (
                
                 <ApiConnector endpoint={'v4/rockets'} />

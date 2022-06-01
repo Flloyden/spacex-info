@@ -4,8 +4,9 @@ import './MyLaunches.css';
 export default function MyLaunches() {
   // declaring state variable
   const [MyList, setMyList] = useState({})
+
+  // Variable to save the name about a launchpad
   let pad;
-  /* 'pad' is the defintion of launchpad */
 
   function deleteLaunch(id) {
     /**
@@ -16,6 +17,7 @@ export default function MyLaunches() {
     let launCardObject = (JSON.parse(delObject));
     delete launCardObject[id]
 
+    // Checks if any key exist in addedLaunchCard 
     if (launCardObject && Object.keys(launCardObject).length === 0
       && Object.getPrototypeOf(launCardObject) === Object.prototype) {
       localStorage.removeItem('addedLaunchCard');
@@ -42,17 +44,20 @@ export default function MyLaunches() {
         
         {Object.values(showLaunchCard).map((info, i) => {
 
+          // gets the information about a rocket from localstorage "addedLaunchCard"
           let rocketId = localStorage.getItem(info[0].rocket);
           let rocketObject = (JSON.parse(rocketId));
 
+          // gets the information about a launchpad from localstorage "addedLaunchCard"
           let allLaunchPads = localStorage.getItem('launchpads');
           let launchPadObjects = (JSON.parse(allLaunchPads));
 
-
+          // Maps launchpad from api-call against localstorage and returns the name instead of id
           launchPadObjects.map((launchPad, index) => {
             if (info[0].launchpad === launchPad.id) {
-              return (pad = launchPad.name)
+              pad = launchPad.name
             }
+            return (null)
           })
 
           return (
